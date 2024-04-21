@@ -13,6 +13,7 @@
   --cor-2: #476BB9;
   --cor-3: #91BED4;
   --cor-4: #D9E8F5;
+  --cor-porto: #02A0FD;
   --fundo-cinza: #F6F6F6
 }
 
@@ -24,6 +25,12 @@
 
 .texto-cor-3 {
   color: var(--cor-3);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.texto-cor-porto {
+  color: var(--cor-porto);
   font-weight: 500;
   font-style: normal;
 }
@@ -235,4 +242,43 @@ header nav button:hover {
 #secao-4 #imagens-secao-agendamento figure img {
   height: 90%;
   border-radius: 10px;
+}
+
+#secao-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+}
+
+#secao-5 #secao-porto {
+  background-color: var(--cor-1);
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#secao-5 #secao-porto img {
+  height: 80%;
+  width: fit-content;
+}
+
+#secao-5 #secao-porto #secao-porto-texto h2 {
+  text-align: left;
+  color: white;
+  margin: 20px 30px;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+#secao-5 #secao-porto #secao-porto-texto h3 {
+  text-align: left;
+  color: white;
+  margin: 20px 30px;
+  font-size: 30px;
+  font-weight: 400;
 }
