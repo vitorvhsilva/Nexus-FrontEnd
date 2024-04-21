@@ -18,12 +18,14 @@
 
 .texto-cor-2 {
   color: var(--cor-2);
-  font-weight: 500
+  font-weight: 500;
+  font-style: normal;
 }
 
 .texto-cor-3 {
   color: var(--cor-3);
-  font-weight: 500
+  font-weight: 500;
+  font-style: normal;
 }
 
 header {
@@ -86,19 +88,19 @@ header nav button:hover {
   align-items: center;
 }
 
-#secao-1 #texto-secao-1 h1 {
+#secao-1 #texto-diagnostico-1 h1 {
   font-size: 60px;
   font-weight: 400;
   margin: 10px 0 0 0;
 }
 
-#secao-1 #texto-secao-1 h2 {
+#secao-1 #texto-diagnostico-1 h2 {
   font-size: 24px;
   font-weight: 500;
   margin: 20px 0;
 }
 
-#secao-1 #texto-secao-1 button {
+#secao-1 #texto-diagnostico-1 button {
   font-size: 20px;
   padding: 15px 50px;
   margin: 20px 0px;
@@ -108,7 +110,7 @@ header nav button:hover {
   background-color: var(--cor-1);
 }
 
-#secao-1 #texto-secao-1 button:hover {
+#secao-1 #texto-diagnostico-1 button:hover {
   cursor: pointer;
   background-color: var(--cor-2);
 }
@@ -193,4 +195,44 @@ header nav button:hover {
   margin: 20px 30px;
   font-size: 25px;
   font-weight: 400;
+}
+
+#secao-4 {
+  width: 100%;
+  height: 70vh;
+  background-color: var(--fundo-cinza);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#secao-4 #texto-secao-agendamento h2 {
+  margin: 30px 0;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+#secao-4 #texto-secao-agendamento h3 {
+  margin: 30px 0;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#secao-4 #imagens-secao-agendamento {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+}
+
+#secao-4 #imagens-secao-agendamento figure {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#secao-4 #imagens-secao-agendamento figure img {
+  height: 90%;
+  border-radius: 10px;
 }
