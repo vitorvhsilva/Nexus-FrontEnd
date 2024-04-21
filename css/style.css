@@ -145,9 +145,52 @@ header nav button:hover {
   padding: 5px 0;
 }
 
+#secao-2 #icones .icone img:hover {
+  transform: scale(1.05);
+} 
+
 #secao-2 #icones .icone h3 {
   font-size: 20px;
   text-align: center;
   font-weight: 500;
 }
 
+#secao-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+}
+
+#secao-3 #secao-diagnostico {
+  background-color: #000000;
+  width: 80%;
+  height: 90%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#secao-3 #secao-diagnostico img {
+  height: 100%;
+  width: min-content;
+  border-radius: 20px;
+}
+
+#secao-3 #secao-diagnostico #secao-diagnostico-texto h2 { 
+  text-align: right;
+  color: white;
+  margin: 20px 30px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+#secao-3 #secao-diagnostico #secao-diagnostico-texto h3 { 
+  text-align: right;
+  color: white;
+  margin: 20px 30px;
+  font-size: 25px;
+  font-weight: 400;
+}
