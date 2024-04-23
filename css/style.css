@@ -60,6 +60,16 @@ header {
   height: 10vh;
 }
 
+#header-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+}
+
 header nav {
   display: flex;
   align-items: center;
