@@ -297,7 +297,7 @@ footer {
   align-items: center;
   background-color: #000000;
   width: 100%;
-  height: 40vh;
+  height: 50vh;
 }
 
 footer #footer-secao-esquerda {
@@ -373,6 +373,7 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   transform: scale(1.1);
 }
 
+<<<<<<< HEAD
 #fundo-azul {
   background-color: var(--cor-1);
   display: flex;
@@ -385,3 +386,61 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   height: 90vh;
   background-color: white;
 }
+=======
+#secao-sobre-nos{
+  background-color:#304269;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40vh;
+}
+
+#secao-sobre-nos #sobre-nos-texto {
+  margin-left: 30px;
+}
+
+#secao-sobre-nos #sobre-nos-texto h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#secao-sobre-nos #sobre-nos-texto h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#integrantes h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+#integrantes #colaboradores {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+#integrantes #colaboradores .colaborador img {
+  width: fit-content;
+  height: 200px;
+  border-radius: 50%;
+}
+
+#integrantes #colaboradores .colaborador {
+  text-align: center;
+}
+
+#integrantes #colaboradores .colaborador h3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#integrantes #colaboradores .colaborador a {
+  font-size: 14px;
+  font-weight: 400;
+}
+>>>>>>> e7606d0f66bf077d9cf44d1cc7ddd9ebc7b34a73
