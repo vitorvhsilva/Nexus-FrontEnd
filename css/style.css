@@ -583,8 +583,9 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   width: 5%;
 }
 
-.secao-area-cliente header a img {
-  margin: 20px;
+#user {
+  width: 70%;
+  margin-right: 20px;
 }
 
 .secao-area-cliente header nav {
