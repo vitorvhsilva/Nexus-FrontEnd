@@ -372,3 +372,16 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 .redes-sociais-footer a:hover {
   transform: scale(1.1);
 }
+
+#fundo-azul {
+  background-color: var(--cor-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#secao-login {
+  width: 90vw;
+  height: 90vh;
+  background-color: white;
+}
