@@ -42,6 +42,8 @@
   font-style: normal;
 }
 
+/* home */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -56,8 +58,8 @@ header nav {
   align-items: center;
 }
 
-header img {
-  width: 5%;
+header a img {
+  width: 15%;
   margin: 20px;
 }
 
@@ -373,7 +375,8 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   transform: scale(1.1);
 }
 
-<<<<<<< HEAD
+/* login */
+
 #fundo-azul {
   background-color: var(--cor-1);
   display: flex;
@@ -386,7 +389,9 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   height: 90vh;
   background-color: white;
 }
-=======
+
+/* sobre nos */
+
 #secao-sobre-nos{
   background-color:#304269;
   color: white;
@@ -421,7 +426,7 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 50px;
+  margin: 70px 0px;
 }
 
 #integrantes #colaboradores .colaborador img {
@@ -442,5 +447,5 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 #integrantes #colaboradores .colaborador a {
   font-size: 14px;
   font-weight: 400;
+  padding: 50px 0;
 }
->>>>>>> e7606d0f66bf077d9cf44d1cc7ddd9ebc7b34a73
