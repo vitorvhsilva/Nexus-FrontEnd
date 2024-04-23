@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/logos/nexuswhite.png" type="image/x-icon">
     <title>Cadastro</title>
-  </head>
-  <body>
-    <h1>Bem vindo!</h1>
-    <nav>
-    <h2>Já tem um cadastro? Inicie com seu <a href="./login.html" >login</h2></a>
-    <h2>Digite suas informações para cadastro</h2>
-    <input type="text" required placeholder="Insira seu email: ">
-    <p></p>
-    <input type="text" required placeholder="Insira sua senha: ">
-    <p></p>
-    <a href="./area-cliente.html"><button>CADASTRAR</button></a>
-    </nav>
-  </body>
-</html>
+</head>
+<body class="fundo-azul">
+    <section class="secao-login-cadastro">
+        <header> 
+            <a href="../index.html" class="secao-login-cadastro-header-imagem" ><img src="../img/logos/nexusblue1.png" alt="Logo da Nexus"></a>
+            <h2 class="secao-login-cadastro-header-texto">Já tem uma conta? <a href="./login.html" class="texto-cor-1">Faça login</h2></a>
+        </header>
+        <main>
+            <img src="../img/desenhos/signup.png" alt="Imagem de Cadastro">
+            <div class="fazer-login-cadastro">
+                <h2>Bem vindo!</h2>
+                <h3><em class="texto-cor-2">Cadastre-se</em> na plataforma</h3>
+                <form action="#">
+                    <input type="email" id="email" name="email" placeholder="Digite seu email">
+                    <input type="password" id="password" name="password" placeholder="Crie uma senha">
+                    <input type="password" id="password" name="password" placeholder="Confirme sua senha">
+                </form>
+                <div class="botao-login-cadastro">
+                    <a href="./login.html"><button>CADASTRAR</button></a>
+                </div>
+            </div>
+        </main>
+    </section>
+</body>
+</html> 

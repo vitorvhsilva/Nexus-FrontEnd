@@ -18,6 +18,12 @@
   --fundo-cinza: #F6F6F6
 }
 
+.texto-cor-1 {
+  color: var(--cor-1);
+  font-weight: 500;
+  font-style: normal;
+}
+
 .texto-cor-2 {
   color: var(--cor-2);
   font-weight: 500;
@@ -58,8 +64,12 @@ header nav {
   align-items: center;
 }
 
+header a {
+  width: 5%;
+}
+
 header a img {
-  width: 15%;
+  width: 100%;
   margin: 20px;
 }
 
@@ -375,21 +385,6 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   transform: scale(1.1);
 }
 
-/* login */
-
-#fundo-azul {
-  background-color: var(--cor-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#secao-login {
-  width: 90vw;
-  height: 90vh;
-  background-color: white;
-}
-
 /* sobre nos */
 
 #secao-sobre-nos{
@@ -448,4 +443,126 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   font-size: 14px;
   font-weight: 400;
   padding: 50px 0;
+}
+
+/* login / cadastro*/
+
+.fundo-azul {
+  background-color: var(--cor-1);
+}
+
+.fundo-azul .secao-login-cadastro {
+  background-color: #ffffff;
+  width: 90vw;
+  height: 90vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fundo-azul .secao-login-cadastro header {
+  display: flex;
+  justify-content: space-between;
+  height: 13.5%;
+}
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-imagem {
+  width: fit-content;
+  width: 7%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto{
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto a{
+  text-decoration: none;
+}
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto a:hover{
+  color: var(--cor-2);
+}
+
+.fundo-azul .secao-login-cadastro main {
+  width: 100%;
+  height: 86.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fundo-azul .secao-login-cadastro main img {
+  height: 100%;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro form input {
+  width: 90%;
+  outline: none;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro form input:focus {
+  transform: scale(1.05);
+  outline: none;
+  border: 2px solid var(--cor-2);
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a button {
+  font-size: 26px;
+  padding: 10px 50px;
+  color: #ffffff;
+  background-color: var(--cor-1);
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a button:hover {
+  background-color: var(--cor-2);
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a:hover {
+  color: var(--cor-2);
 }
