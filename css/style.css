@@ -566,3 +566,12 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 .fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a:hover {
   color: var(--cor-2);
 }
+.secao-area-cliente-header-imagem{
+  background-color: #ffffff;
+  width: 90vw;
+  height: 90vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
