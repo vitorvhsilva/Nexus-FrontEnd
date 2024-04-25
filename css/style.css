@@ -108,8 +108,12 @@ header nav button {
   margin: 0px 20px;
   border: none;
   border-radius: 5px;
-  color: #ffffff;
   background-color: var(--cor-1);
+}
+
+header nav button a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 header nav button:hover {
@@ -146,6 +150,11 @@ header nav button:hover {
   border-radius: 10px;
   color: #ffffff;
   background-color: var(--cor-1);
+}
+
+#secao-1 #texto-diagnostico-1 a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 #secao-1 #texto-diagnostico-1 button:hover {
@@ -453,7 +462,13 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 #integrantes #colaboradores .colaborador a {
   font-size: 14px;
   font-weight: 400;
-  padding: 50px 0;
+  text-decoration: none;
+  color: #000000;
+}
+
+#integrantes #colaboradores .colaborador a:hover {
+  color: var(--cor-2);
+  font-size: 14.5px;
 }
 
 /* login / cadastro*/
@@ -472,13 +487,14 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   transform: translate(-50%, -50%);
 }
 
-.fundo-azul .secao-login-cadastro header {
+.fundo-azul header {
   display: flex;
   justify-content: space-between;
   height: 13.5%;
+  background-color: #ffffff;
 }
 
-.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-imagem {
+.fundo-azul header .secao-login-cadastro-header-imagem {
   width: fit-content;
   width: 7%;
   margin-top: 20px;
@@ -486,22 +502,22 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 }
 
 
-.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto{
+.fundo-azul header .secao-login-cadastro-header-texto{
   margin-top: 20px;
   margin-right: 20px;
   font-size: 20px;
   font-weight: 400;
 }
 
-.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto a{
+.fundo-azul header .secao-login-cadastro-header-texto a{
   text-decoration: none;
 }
 
-.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto a:hover{
+.fundo-azul header .secao-login-cadastro-header-texto a:hover{
   color: var(--cor-2);
 }
 
-.fundo-azul .secao-login-cadastro main {
+.fundo-azul main {
   width: 100%;
   height: 86.5%;
   display: flex;
@@ -554,7 +570,7 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   margin-top: 30px;
 }
 
-.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a button {
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro button {
   font-size: 26px;
   padding: 10px 50px;
   color: #ffffff;
@@ -564,18 +580,21 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   border-radius: 40px;
 }
 
-.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a button:hover {
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro button:hover {
   background-color: var(--cor-2);
 }
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro button a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+}
+
 
 .fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a {
   text-decoration: none;
   font-size: 20px;
-  color: black;
-}
-
-.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a:hover {
-  color: var(--cor-2);
+  color: #000000;
 }
 
 /* area cliente */
