@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   transition: 0.5s all ease-out;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -16,6 +17,12 @@
   --cor-porto: #02A0FD;
   --cor-nexus: #8C64FF;
   --fundo-cinza: #F6F6F6
+}
+
+.texto-cor-1 {
+  color: var(--cor-1);
+  font-weight: 500;
+  font-style: normal;
 }
 
 .texto-cor-2 {
@@ -42,6 +49,8 @@
   font-style: normal;
 }
 
+/* home */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -51,13 +60,27 @@ header {
   height: 10vh;
 }
 
+#header-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+}
+
 header nav {
   display: flex;
   align-items: center;
 }
 
-header img {
+header a {
   width: 5%;
+}
+
+header a img {
+  width: 100%;
   margin: 20px;
 }
 
@@ -373,6 +396,8 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   transform: scale(1.1);
 }
 
+/* sobre nos */
+
 #secao-sobre-nos{
   background-color:#304269;
   color: white;
@@ -407,7 +432,7 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 50px;
+  margin: 70px 0px;
 }
 
 #integrantes #colaboradores .colaborador img {
@@ -428,4 +453,223 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 #integrantes #colaboradores .colaborador a {
   font-size: 14px;
   font-weight: 400;
+  padding: 50px 0;
 }
+
+/* login / cadastro*/
+
+.fundo-azul {
+  background-color: var(--cor-1);
+}
+
+.fundo-azul .secao-login-cadastro {
+  background-color: #ffffff;
+  width: 90vw;
+  height: 90vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fundo-azul .secao-login-cadastro header {
+  display: flex;
+  justify-content: space-between;
+  height: 13.5%;
+}
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-imagem {
+  width: fit-content;
+  width: 7%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto{
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto a{
+  text-decoration: none;
+}
+
+.fundo-azul .secao-login-cadastro header .secao-login-cadastro-header-texto a:hover{
+  color: var(--cor-2);
+}
+
+.fundo-azul .secao-login-cadastro main {
+  width: 100%;
+  height: 86.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fundo-azul .secao-login-cadastro main img {
+  height: 100%;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro form input {
+  width: 90%;
+  outline: none;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro form input:focus {
+  transform: scale(1.05);
+  outline: none;
+  border: 2px solid var(--cor-2);
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a button {
+  font-size: 26px;
+  padding: 10px 50px;
+  color: #ffffff;
+  background-color: var(--cor-1);
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a button:hover {
+  background-color: var(--cor-2);
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.fundo-azul .secao-login-cadastro main .fazer-login-cadastro .botao-login-cadastro a:hover {
+  color: var(--cor-2);
+}
+
+/* area cliente */
+
+.secao-area-cliente header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 10vh;
+}
+
+.secao-area-cliente header a {
+  width: 5%;
+}
+
+#user {
+  margin-right: 20px;
+}
+
+#user img {
+  width: 70%;
+}
+
+.secao-area-cliente header nav {
+  width: min-content;
+}
+
+.secao-area-cliente header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.secao-area-cliente header nav ul li a {
+  color: #000000;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0px 20px;
+}
+
+.secao-area-cliente header nav ul li a:hover {
+  color: var(--cor-2);
+  font-size: 19px;
+}
+
+.secao-area-cliente main h1 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  margin-bottom: 100px;
+}
+
+.secao-area-cliente main #funcionalidades {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.secao-area-cliente main #funcionalidades .funcionalidade {
+  outline: none;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 20px;
+  height: 40vh;
+  width: 25vw;
+}
+
+.secao-area-cliente main #funcionalidades .funcionalidade:hover {
+  outline: none;
+  border: 2px solid var(--cor-2);
+  transform: scale(1.1);
+}
+
+.secao-area-cliente main #funcionalidades .funcionalidade img {
+  display: block;
+  margin: auto;
+  height: 40%;
+  padding: 20px 0px;
+}
+
+.secao-area-cliente main #funcionalidades  .funcionalidade h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.secao-area-cliente main #funcionalidades .funcionalidade p{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+
+
+
+

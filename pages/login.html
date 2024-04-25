@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/logos/nexuswhite.png" type="image/x-icon">
     <title>Login</title>
 </head>
-<body>
-    <h1>Bem vindo de volta!</h1>
-    <h2>Novo usuário? <a href="./cadastro.html"> Cadastre</h2></a>
-    <h2>Faça login para continuar</h2>
-    <input type="text" required placeholder="Insira seu email">
-    <p></p>
-    <input type="text" required placeholder="Insira sua senha">
-    <p></p>
-    <nav>
-        <a href="./area-cliente.html"><button>LOGIN</button></a>
-    </nav>
-    <nav>
-        <ul>
-            <a href="#">Esqueceu sua senha?</a>
-        </ul>
-    </nav>
+<body class="fundo-azul">
+    <section class="secao-login-cadastro">
+        <header> 
+            <a href="../index.html" class="secao-login-cadastro-header-imagem" ><img src="../img/logos/nexusblue1.png" alt="Logo da Nexus"></a>
+            <h2 class="secao-login-cadastro-header-texto">Novo usuário? <a href="./cadastro.html" class="texto-cor-1">Cadastre-se</h2></a>
+        </header>
+        <main>
+            <img src="../img/desenhos/bem-vindo.png" alt="Imagem de boas vindas">
+            <div class="fazer-login-cadastro">
+                <h2>Bem vindo de volta!</h2>
+                <h3>Faça <em class="texto-cor-2">login</em> para continuar</h3>
+                <form action="#">
+                    <input type="email" id="email" name="email" placeholder="Digite seu email">
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha">
+                </form>
+                <div class="botao-login-cadastro">
+                    <a href="./area-cliente.html"><button>LOGIN</button></a>
+                    <a href="#"><p>Esqueceu sua senha?</p></a>
+                </div>
+            </div>
+        </main>
+    </section>
 </body>
 </html> 
