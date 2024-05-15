@@ -719,6 +719,9 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   #logonexusheader {
     width: 200%;
   }
+  #secao-2 {
+    height: fit-content;
+  }
  
   #secao-2 h2 {
     display: block;
@@ -738,9 +741,10 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   }
 
   #secao-3 {
+    height: fit-content;
     display: none;
   }
-  
+
     
 }
 
