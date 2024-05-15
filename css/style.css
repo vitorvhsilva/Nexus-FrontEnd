@@ -58,6 +58,7 @@ header {
   background-color: #ffffff;
   width: 100%;
   height: 10vh;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #header-home {
@@ -679,39 +680,67 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 
 /* responsividade para dispositivos moveis*/
 @media(max-width: 450px){
-  body {
-      flex-direction: column;
-  }
+
 
   #secao-1 {
+    padding-top: 80px;
     width: 100%;
     height: 90vh;
-    background-color: var(--fundo-cinza);
-    display: grid;
-    grid-template-columns: 400px;
-    grid-template-rows: 700px ;
-    justify-items: stretch;
+    flex-direction: column;
+
   }
   #secao-1 #texto-diagnostico-1 h1 {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 400;
     margin: 10px 0 0 0;
+    text-align: center;
+    
   }
 
   #secao-1 img {
 
-    width: 45%;
+    width: 70%;
     height: min-content;
     border-radius: 15px;
     justify-self: center ;
   }
   
   #secao-1 #texto-diagnostico-1 h2{
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 500;
       margin: 50px 0;
-     }
+      text-align: center;
+  } 
+
+  #header-home nav {
+    display: none;
+  }
+
+  #logonexusheader {
+    width: 200%;
+  }
  
+  #secao-2 h2 {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    font-size: 28px;
+  }
+
+  #icones {
+    padding-top: 50px ;
+    flex-direction: column;
+  }
+
+  .icone {
+    padding: 20px 0px;
+  }
+
+  #secao-3 {
+    display: none;
+  }
+  
     
 }
 
