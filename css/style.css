@@ -795,14 +795,17 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
     
   }
 
+  #secao-3 #secao-diagnostico #secao-diagnostico-texto h2 {
+    font-size: 24px; 
+  }
+
   #secao-4 #texto-secao-agendamento h2{
-    font-size: 40px;
+    font-size: 30px;
     padding-left: 10px;
   }
   #secao-4 #texto-secao-agendamento h3{
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 10px;
-    text-align: justify;
   }
   
   #secao-5 #secao-porto #secao-porto-texto {
