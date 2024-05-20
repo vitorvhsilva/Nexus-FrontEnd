@@ -765,8 +765,8 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
     width: 100%;
     height: fit-content;
     flex-direction: column;
-
   }
+
   #secao-1 #texto-diagnostico-1 h1 {
     font-size: 30px;
     font-weight: 400;
@@ -914,10 +914,10 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   #secao-1 {
     padding-top: 80px;
     width: 100%;
-    height: 90vh;
+    height: fit-content;
     flex-direction: column;
-
   }
+
   #secao-1 #texto-diagnostico-1 h1 {
     font-size: 30px;
     font-weight: 400;
@@ -927,11 +927,11 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   }
 
   #secao-1 img {
-
     width: 70%;
     height: min-content;
     border-radius: 15px;
     justify-self: center ;
+    padding-bottom: 10px;
   }
   
   #secao-1 #texto-diagnostico-1 h2{
@@ -976,37 +976,88 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 
   #secao-4{
     flex-direction: column;
+    height: fit-content;
   }
 
-  #secao-4 #texto-secao-agendamento h2 {
-    padding-top: 20px;
-    display: block;
-    width: 80%;
-    margin: auto;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-
-  }
-  #secao-4 #texto-secao-agendamento h3{
-    padding-top: 20px;
-    display: block;
-    width: 80%;
-    margin: auto;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
+  #secao-4 #imagens-secao-agendamento img{
+    height: 400px;
   }
 
   #secao-4 #imagens-secao-agendamento {
-    flex-direction: column;
+    padding-bottom: 20px;
   }
 
-  #secao-4 #imagens-secao-agendamento .imagem-agendamento{
-    padding-top: 20px;
-    width: 20px;
-    border-radius: 15px;
-    justify-self: center ;
+  #secao-4 #texto-secao-agendamento h2{
+    font-size: 30px;
+    padding-left: 10px;
   }
-   
+  #secao-4 #texto-secao-agendamento h3{
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  #secao-5 #secao-porto img {
+    height: 40%;
+    width: fit-content;
+  }
+  
+  #secao-5 #secao-porto #secao-porto-texto {
+    height: fit-content;
+  
+  }
+  #secao-5 #secao-porto #secao-porto-texto h2{
+    font-size: 40px;
+  }
+  #secao-5 #secao-porto #secao-porto-texto h3{
+    font-size: 16px;
+  }
+
+  #secao-sobre-nos #imagem-nexus-sobrenos{
+    width: 25%;
+  }
+
+  footer {
+    flex-direction: row;
+  }
+
+  .botao-login-cadastro p{
+    padding-left: 20px;
+  }
+
+  #esqueceusenha {
+    font-size: 18px;
+  }
+
+   .secao-login-cadastro main {
+    width: fit-content;
+   }
+
+   .secao-login-cadastro main img {
+    height: 10%;
+   }
+   .secao-login-cadastro main .fazer-login-cadastro{
+    width: 250%;
+   }
+    
+   .secao-login-cadastro main .fazer-login-cadastro h2{
+    height: 50%;
+    padding-top: 35%;
+    font-size: 20px;
+   }
+   .secao-login-cadastro main .fazer-login-cadastro h3{
+    text-align: start;
+   }
+   .fundo-azul .secao-login-cadastro main img {
+    height: 50%;
+  }
+
+  .secao-area-cliente main h1{
+    padding-top: 10px;
+  }
+
+   .secao-area-cliente main #funcionalidades .funcionalidade h2{
+    font-size: 21px;
+    text-align: center;
+
+  }
 }
