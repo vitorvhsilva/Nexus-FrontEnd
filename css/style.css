@@ -1073,36 +1073,16 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
     font-size: 18px;
   }
 
-   .secao-login-cadastro main {
-    width: fit-content;
-   }
-
-   .secao-login-cadastro main img {
-    height: 10%;
-   }
-   .secao-login-cadastro main .fazer-login-cadastro{
-    width: 250%;
-   }
-    
-   .secao-login-cadastro main .fazer-login-cadastro h2{
-    height: 50%;
-    padding-top: 35%;
-    font-size: 20px;
-   }
-   .secao-login-cadastro main .fazer-login-cadastro h3{
-    text-align: start;
-   }
-   .fundo-azul .secao-login-cadastro main img {
-    height: 50%;
+  #funcionalidades{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .secao-area-cliente main h1{
-    padding-top: 10px;
+  .secao-area-cliente main #funcionalidades .funcionalidade{
+    width: 80%;
+    margin: 10px 0px;
   }
 
-   .secao-area-cliente main #funcionalidades .funcionalidade h2{
-    font-size: 21px;
-    text-align: center;
-
-  }
+  
 }
