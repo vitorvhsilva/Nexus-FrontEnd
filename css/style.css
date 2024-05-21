@@ -1117,4 +1117,8 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   .fazer-login-cadastro h2{
     text-align: center;
   }
+
+  #colaboradores{
+    flex-direction: column;
+  }
 }
