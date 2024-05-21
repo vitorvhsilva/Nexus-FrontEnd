@@ -1113,4 +1113,8 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   .secao-login-cadastro header .secao-login-cadastro-header-texto {
     font-size: 15px;
   }
+
+  .fazer-login-cadastro h2{
+    text-align: center;
+  }
 }
