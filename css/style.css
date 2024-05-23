@@ -456,6 +456,17 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   font-size: 14.5px;
 }
 
+#integrantes h2 {
+  padding-bottom: 30px;
+}
+
+#linkrepositorio {
+  font-size: 30px;
+  padding: 20px 0;
+  color: #000000;
+  text-decoration: none;
+}
+
 /* login / cadastro*/
 
 .fundo-azul {
