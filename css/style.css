@@ -793,7 +793,7 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
     display: none;
   }
 
-  #logonexusheader {
+  #logonexusheader, #logouser {
     width: 200%;
   }
 
@@ -871,10 +871,7 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
    .secao-login-cadastro main {
     width: fit-content;
    }
-
-   .secao-login-cadastro main img {
-    height: 10%;
-   }
+   
    .secao-login-cadastro main .fazer-login-cadastro{
     width: 250%;
    }
@@ -900,6 +897,21 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
     text-align: center;
 
   }
+
+  .secao-area-cliente main #funcionalidades .funcionalidade {
+    height: 60vh;
+    width: 25vw;
+  }
+
+  .secao-area-cliente main #funcionalidades .funcionalidade img {
+    height: 25%;
+  }
+
+  
+  #user {
+    display: none;
+  }
+
 }
 
 
@@ -945,9 +957,14 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
     display: none;
   }
 
-  #logonexusheader {
+  #logonexusheader{
     width: 200%;
   }
+
+  #user {
+    display: none;
+  }
+
   #secao-2 {
     height: fit-content;
   }
@@ -1003,6 +1020,8 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
 
   #secao-5 #secao-porto {
     flex-direction: column;
+    height: 100%;
+    padding: 30px 0px;
   }
   
   #secao-5 #secao-porto #secao-porto-texto {
@@ -1089,7 +1108,7 @@ footer #footer-secao-direita #redes-sociais-nexus h2, footer #footer-secao-direi
   }
 
   .fundo-azul .secao-login-cadastro main img {
-    height: 20%
+    display: none;
   }
 
   .secao-login-cadastro main {
