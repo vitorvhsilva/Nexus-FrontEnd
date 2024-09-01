@@ -1,9 +1,9 @@
-import BannerHome from "../../components/Home/BannerHome/BannerHome";
+import OrcamentoHome from "../../components/Home/OrcamentoHome/OrcamentoHome";
 
 export default function Teste() {
   return (
     <>
-      <BannerHome/>
+      <OrcamentoHome/>
     </>
   )
 }
