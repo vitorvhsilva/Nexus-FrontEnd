@@ -1,9 +1,8 @@
-function App() {
+import { Outlet } from "react-router-dom"
 
+function App() {
   return (
-    <h1 className="text-blue-300">
-      Ola Mundo
-    </h1>
+    <Outlet/>
   )
 }
 
