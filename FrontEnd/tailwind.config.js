@@ -3,9 +3,24 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "https://fonts.googleapis.com/css2?family=Poppins:wgt@400;500&display=swap"
   ],
   theme: {
-    extend: {},
+    colors: {
+      'cor1': '#304269',
+      'cor2': '#476BB9',
+      'cor3': '#91BED4',
+      'cor4': '#D9E8F5',
+      'cor5': '#02A0FF',
+      'corFundoCinza': '#F6F6F6',
+      'corBranco': '#FFF',
+      'corPreto': '#000',
+    },
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
