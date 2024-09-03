@@ -1,9 +1,9 @@
-import OrcamentoHome from "../../components/Home/OrcamentoHome/OrcamentoHome";
+import AgendamentoHome from "../../components/Home/AgendamentoHome/AgendamentoHome";
 
 export default function Teste() {
   return (
     <>
-      <OrcamentoHome/>
+      <AgendamentoHome/>
     </>
   )
 }
