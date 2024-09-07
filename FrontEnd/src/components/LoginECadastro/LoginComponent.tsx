@@ -3,7 +3,7 @@ import InputForm from "./InputForm";
 export default function LoginComponent() {
   return (
     <main className="w-full h-[100vh] py-10 bg-cor1 flex justify-center items-center">
-      <div className="w-[95%] md:h-[95%] h-fit bg-corBranco rounded-2xl flex justify-around items-center md:flex-row flex-col">
+      <form className="w-[95%] md:h-[95%] h-fit bg-corBranco rounded-2xl flex justify-around items-center md:flex-row flex-col">
         <img src="./imgs/desenhos/bem-vindo.png" alt="Desenho de Boas Vindas" className="w-fit h-96"/>
         <div className="font-poppins">
           <h1 className="text-4xl text-center md:text-start">Bem vindo de volta!</h1>
@@ -15,7 +15,7 @@ export default function LoginComponent() {
             <p>Esqueceu sua senha?</p>
           </div>
         </div>
-      </div>
+      </form>
     </main>
   )
 }

@@ -1,9 +1,7 @@
-import LoginComponent from "../../components/LoginECadastro/Login";
+import CadastroComponent from "../../components/LoginECadastro/CadastroComponent";
 
 export default function Teste() {
   return (
-    <>
-      <LoginComponent/>
-    </>
+    <CadastroComponent/>
   )
 }
