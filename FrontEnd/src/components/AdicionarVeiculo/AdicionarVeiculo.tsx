@@ -4,11 +4,11 @@ export default function AdicionarVeiculo(){
     return(
         <section className="font-poppins">
             <h1 className="text-3xl text-center my-5">Insira os <span className="text-cor5">dados</span> do seu <span className="text-cor5">veículo</span></h1>
-            <form action="" className="w-full h-fit px-40 mt-20">
+            <form action="" className="w-full h-fit md:px-40 px-5 mt-20">
                 <InputTextAdicionarVeiculo label="Marca" placeholder="Insira a marca do seu veículo" id="marca"/>
                 <InputTextAdicionarVeiculo label="Modelo" placeholder="Insira o modelo do seu veículo" id="modelo"/>
                 <label className="block text-2xl mb-5">Tipo do veículo</label>
-                <div className="w-full h-fit flex justify-between items-center">
+                <div className="w-full h-fit flex justify-between items-start md:flex-row flex-col md:items-center">
                     <div className="w-fit h-fit flex justify-center items-center gap-4">
                         <input className="w-8 h-8" type="radio" id="html" name="fav_language" value="HTML"/>
                         <label htmlFor="html" className="text-2xl">Carro</label>
