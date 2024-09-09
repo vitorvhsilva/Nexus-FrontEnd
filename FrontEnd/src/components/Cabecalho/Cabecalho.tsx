@@ -16,7 +16,7 @@ export default function Cabecalho() {
           <img
             className="navbar-logo w-14 h-12 ml-4"
             src="/imgs/logos/nexusblue1.png"
-            alt="Home"
+            alt="logo da nexus azul"
           />
         </Link>
         <button className="navbar-toggler" onClick={toggleMenu}>

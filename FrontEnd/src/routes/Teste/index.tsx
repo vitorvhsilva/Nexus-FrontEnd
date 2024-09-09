@@ -1,10 +1,9 @@
-import AdicionarVeiculo from "../../components/AdicionarVeiculo/adicionarVeiculo";
-import CadastroComponent from "../../components/LoginECadastro/CadastroComponent";
-import PaginaUsuarioComponent from "../../components/PaginaUsuario/PaginaUsuarioComponent";
-
+import Cabecalho from "../../components/Cabecalho/Cabecalho";
+import BannerIntegrantes from "../../components/Integrantes/BannerIntegrantes";
 
 export default function Teste() {
   return (
-    <PaginaUsuarioComponent/>
+    <><Cabecalho />
+    <BannerIntegrantes /></>
   )
 }
