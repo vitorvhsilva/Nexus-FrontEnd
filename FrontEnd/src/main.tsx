@@ -10,6 +10,7 @@ import Login from './routes/Login/index.tsx'
 import Cadastro from './routes/Cadastro/index.tsx'
 import PaginaUsuario from './routes/PaginaUsuario/index.tsx'
 import Teste from './routes/Teste/index.tsx'
+import Diagnostico from './routes/Diagnostico/index.tsx'
 
 const routes = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
       {
         path: "/user",
         element: <PaginaUsuario/>
+      },
+      {
+        path: "/diagnostico",
+        element: <Diagnostico/>
       },
       {
         path: "/teste",
