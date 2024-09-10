@@ -15,12 +15,20 @@ export default {
       'corFundoCinza': '#F6F6F6',
       'corBranco': '#FFF',
       'corPreto': '#000',
+      'corRoxo': '#8C64FF'
     },
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
     },
+    fontSize: {
+      sm: ['14px', '20px'],
+      base: ['16px', '24px'],
+      lg: ['20px', '28px'],
+      xl: ['24px', '32px'],
+      footer: ["6px", "10px"],
+    }
   },
   plugins: [],
 }
