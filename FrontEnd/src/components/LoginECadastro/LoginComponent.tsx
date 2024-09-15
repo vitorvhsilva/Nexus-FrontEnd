@@ -3,13 +3,13 @@ import InputForm from "./InputForm";
 
 export default function LoginComponent() {
   return (
-    <main className="w-full h-[100vh] py-10 bg-cor1 flex justify-center items-center flex-col">
-      <div className="w-[95%] h-[30%] bg-corBranco rounded-t-2xl flex justify-between px-5 items-center">
+    <main className="w-full h-fit md:h-[100vh] py-10 bg-cor1 flex justify-center items-center flex-col">
+      <div className="w-[95%] h-40 md:h-[30%] bg-corBranco rounded-t-2xl flex justify-between px-5 items-center">
         <Link to={"/"}>
           <img src="./imgs/logos/nexusblack.png" alt="Logo da Nexus" className="w-24"/>
         </Link> 
         <Link to={"/cadastro"}>
-          <p className="text-lg font-poppins">Novo Usuário? <span className="text-cor2">Cadastre-se</span></p>
+          <p className="text-md md:text-lg font-poppins">Novo Usuário? <span className="text-cor2">Cadastre-se</span></p>
         </Link>
       </div>
       <form className="w-[95%] md:h-[95%] h-fit bg-corBranco rounded-b-2xl flex justify-around items-center md:flex-row flex-col">
