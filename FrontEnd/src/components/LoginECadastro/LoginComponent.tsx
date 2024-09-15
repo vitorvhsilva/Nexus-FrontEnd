@@ -9,7 +9,7 @@ export default function LoginComponent() {
           <img src="./imgs/logos/nexusblack.png" alt="Logo da Nexus" className="w-24"/>
         </Link> 
         <Link to={"/cadastro"}>
-          <p className="text-md md:text-lg font-poppins">Novo Usuário? <span className="text-cor2">Cadastre-se</span></p>
+          <p className="text-sm sm:text-md md:text-lg font-poppins">Novo Usuário? <span className="text-cor2">Cadastre-se</span></p>
         </Link>
       </div>
       <form className="w-[95%] md:h-[95%] h-fit bg-corBranco rounded-b-2xl flex justify-around items-center md:flex-row flex-col">
