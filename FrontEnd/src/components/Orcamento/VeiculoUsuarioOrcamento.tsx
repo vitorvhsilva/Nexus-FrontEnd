@@ -36,7 +36,7 @@ export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo
           <p className={`${selecionado ? "text-corBranco" : "text-corPreto"} text-3xl`}>{marca} <span className="text-cor5">{modelo}</span></p>
           <p className={`${selecionado ? "text-corBranco" : "text-corPreto"} text-xl`}>{ano}</p>
           <p className={`${selecionado ? "text-corBranco" : "text-corPreto"} text-xl`}>{placa}</p>
-          <p className={`${selecionado ? "text-corBranco" : "text-corPreto"} text-xl`}>2 diagnósticos</p>
+          <p className={`${selecionado ? "text-corBranco" : "text-corPreto"} text-xl`}>{diagnosticos.length} diagnósticos</p>
         </div>
       </div>
       {selecionado &&       
