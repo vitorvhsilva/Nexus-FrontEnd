@@ -14,13 +14,13 @@ export default function VeiculoUsuario({marca, modelo, ano, placa, tipo}:Veiculo
 
   useEffect(() => {
     if (tipo == "C") {
-      setImg("./imgs/icones/carro.png")
+      setImg("../../../public/imgs/icones/carro.png")
     }
     if (tipo == "M") {
-      setImg("./imgs/icones/moto.png")
+      setImg("../../../public/imgs/icones/moto.png")
     }
     if (tipo == "T") {
-      setImg("./imgs/icones/caminhao.png")
+      setImg("../../../public/imgs/icones/caminhao.png")
     }
   }, [tipo]) 
 

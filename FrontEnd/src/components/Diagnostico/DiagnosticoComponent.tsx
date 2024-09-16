@@ -10,7 +10,7 @@ export default function DiagnosticoComponent(){
     return (
         <>
             <main className="font-poppins">
-                <h2 className="text-center text-2xl my-10">Selecione o <span className="text-cor2"> veículo</span>para o <span className="text-cor2">diagnóstico</span></h2>
+                <h2 className="text-center text-2xl my-10">Selecione o <span className="text-cor2"> veículo</span> para  o <span className="text-cor2">diagnóstico</span></h2>
                 <div className="w-[95%] h-fit grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12 mx-auto rounded-xl my-10 p-5"> 
                     {veiculosUsuarios.map((v) => (
                         <VeiculoUsuario key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo}/>

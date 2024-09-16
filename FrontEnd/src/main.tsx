@@ -45,15 +45,15 @@ const routes = createBrowserRouter([
         element: <AdicionarVeiculo/>
       },
       {
-        path: "/diagnostico",
+        path: "/user/diagnostico",
         element: <Diagnostico/>
       },
       {
-        path: "/orcamento",
+        path: "/user/orcamento",
         element: <Teste/>
       },
       {
-        path: "/agendamento",
+        path: "/user/agendamento",
         element: <Agendamento/>
       },
       {

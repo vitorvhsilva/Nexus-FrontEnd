@@ -30,17 +30,17 @@ export default function Cabecalho() {
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/diagnostico" className="navbar-link">
+              <Link to="/user/diagnostico" className="navbar-link">
                 Diagnóstico
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/orcamento" className="navbar-link">
+              <Link to="/user/orcamento" className="navbar-link">
                 Orçamento
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/agendamento" className="navbar-link">
+              <Link to="/user/agendamento" className="navbar-link">
                 Agendamento
               </Link>
             </li>
