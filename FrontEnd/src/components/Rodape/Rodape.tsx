@@ -6,8 +6,8 @@ export default function Rodape() {
       <footer className="bg-corPreto font-poppins text-corBranco flex flex-row justify-between">
         <div className="flex justify-center items-center">
           <div>
-            <img className="w-20 md:w-32" src="./imgs/logos/nexuswhite.png" alt="Logo da nexus"></img>
-            <img className="w-20 md:w-32" src="./imgs/logos/porto.png" alt="Logo da Porto"></img>
+            <img className="w-20 md:w-32" src="../../../public/imgs/logos/nexuswhite.png" alt="Logo da nexus"></img>
+            <img className="w-20 md:w-32" src="../../../public/imgs/logos/porto.png" alt="Logo da Porto"></img>
           </div>
           <div className="lg:ml-40 md:ml-20 md:m-6 m-2">
             <h6 className="text-md md:text-2xl mb-5">Links rápidos</h6>
@@ -22,19 +22,19 @@ export default function Rodape() {
             <div className="flex flex-col mb-6 items-center">
                 <p className="text-sm">Acompanhe a <span className="text-corRoxo">Nexus</span> nas redes sociais.</p>
                 <div className="flex justify-around items-center w-full">
-                    <img className="w-7 md:w-10" src="./imgs/logos/instagram.png" alt="Logo do Instagram"></img>
-                    <img className="w-7 md:w-10" src="./imgs/logos/linkedin.png" alt="Logo do Linkedin"></img>
-                    <img className="w-7 md:w-10" src="./imgs/logos/youtube.png" alt="Logo do Youtube"></img>
-                    <img className="w-7 md:w-10" src="./imgs/logos/twitter.png" alt="Logo do Twitter"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/instagram.png" alt="Logo do Instagram"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/linkedin.png" alt="Logo do Linkedin"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/youtube.png" alt="Logo do Youtube"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/twitter.png" alt="Logo do Twitter"></img>
                 </div>
             </div>
             <div className="flex flex-col mb-6 items-center">
                 <p className="text-sm">Acompanhe a <span className="text-cor5">Porto</span> nas redes sociais.</p>
                 <div className="flex justify-around items-center w-full">
-                    <img className="w-7 md:w-10" src="./imgs/logos/instagram.png" alt="Logo do Instagram"></img>
-                    <img className="w-7 md:w-10" src="./imgs/logos/linkedin.png" alt="Logo do Linkedin"></img>
-                    <img className="w-7 md:w-10" src="./imgs/logos/youtube.png" alt="Logo do Youtube"></img>
-                    <img className="w-7 md:w-10" src="./imgs/logos/twitter.png" alt="Logo do Twitter"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/instagram.png" alt="Logo do Instagram"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/linkedin.png" alt="Logo do Linkedin"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/youtube.png" alt="Logo do Youtube"></img>
+                    <img className="w-7 md:w-10" src="../../../public/imgs/logos/twitter.png" alt="Logo do Twitter"></img>
                 </div>
             </div>
         </div>

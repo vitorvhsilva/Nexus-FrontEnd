@@ -1,6 +1,6 @@
 import InputTextAdicionarVeiculo from "./InputTextAdicionarVeiculo";
 
-export default function AdicionarVeiculo(){
+export default function AdicionarVeiculoComponent(){
     return(
         <section className="font-poppins">
             <h1 className="text-3xl text-center my-5">Insira os <span className="text-cor5">dados</span> do seu <span className="text-cor5">veículo</span></h1>

@@ -9,18 +9,20 @@ export default function DiagnosticoComponent(){
 
     return (
         <>
-        <main className="font-poppins">
-            <h2 className="text-center text-2xl my-10">Selecione o <span className="text-cor2"> veículo</span>para o <span className="text-cor2">diagnóstico</span></h2>
-            <div className="w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 gap-12 mx-auto rounded-xl my-10 p-5"> 
-                {veiculosUsuarios.map((v) => (
-                    <VeiculoUsuario key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo}/>
-                ))}
-            </div>
-            <div className="flex flex-col justify-center items-center mt-4 mb-6">
-            <h1 className="text-xl">O que <span className="text-cor3">ocorreu</span> com ele?</h1>
-            <textarea className="w-[80%] h-40 mt-6 md:h-60 lg:h-80 p-4 border-2 border-corPreto rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-corPreto placeholder-gray-500" placeholder="Insira a descrição aqui"/>
-            </div>
-            <h4 className="m-4">A análise resultou em: R$ XXXX,XX</h4>
+            <main className="font-poppins">
+                <h2 className="text-center text-2xl my-10">Selecione o <span className="text-cor2"> veículo</span>para o <span className="text-cor2">diagnóstico</span></h2>
+                <div className="w-[95%] h-fit grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12 mx-auto rounded-xl my-10 p-5"> 
+                    {veiculosUsuarios.map((v) => (
+                        <VeiculoUsuario key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo}/>
+                    ))}
+                </div>
+                <div className="flex flex-col justify-center items-center mt-4 mb-6 w-[80%] mx-auto">
+                    <h1 className="text-xl">O que <span className="text-cor3">ocorreu</span> com ele?</h1>
+                    <textarea className="w-full h-40 mt-6 md:h-60 lg:h-80 p-4 border-2 border-corPreto rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-corPreto placeholder-gray-500" placeholder="Insira a descrição aqui"/>
+                    <button className="text-xl bg-cor2 text-corBranco px-10 py-4 rounded-3xl my-5">Fazer diagnóstico</button>
+                    <p className="text-lg my-2 text-left w-full">Análise resultou em:xxx</p>
+                </div>
+
             </main>
         </>
     )

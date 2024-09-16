@@ -12,6 +12,7 @@ import PaginaUsuario from './routes/PaginaUsuario/index.tsx'
 import Teste from './routes/Teste/index.tsx'
 import Diagnostico from './routes/Diagnostico/index.tsx'
 import Agendamento from './components/Agendamento/Agendamento.tsx'
+import AdicionarVeiculo from './routes/AdicionarVeiculo/AdicionarVeiculo.tsx'
 
 const routes = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const routes = createBrowserRouter([
       {
         path: "/user",
         element: <PaginaUsuario/>
+      },
+      {
+        path: "/user/adicionarveiculo",
+        element: <AdicionarVeiculo/>
       },
       {
         path: "/diagnostico",
