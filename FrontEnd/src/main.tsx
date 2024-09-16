@@ -13,6 +13,7 @@ import Teste from './routes/Teste/index.tsx'
 import Diagnostico from './routes/Diagnostico/index.tsx'
 import Agendamento from './components/Agendamento/Agendamento.tsx'
 import AdicionarVeiculo from './routes/AdicionarVeiculo/AdicionarVeiculo.tsx'
+import Orcamento from './routes/Orcamento/Orcamento.tsx'
 
 const routes = createBrowserRouter([
   {
@@ -50,7 +51,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/user/orcamento",
-        element: <Teste/>
+        element: <Orcamento/>
       },
       {
         path: "/user/agendamento",

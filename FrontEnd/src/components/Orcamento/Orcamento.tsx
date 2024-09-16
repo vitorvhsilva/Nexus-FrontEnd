@@ -22,6 +22,9 @@ export default function OrcamentoComponent() {
             <VeiculoUsuarioOrcamento key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} diagnosticos={v.diagnosticos} selecionado={v.id === veiculoSelecionado} aoClicar={() => setVeiculoSelecionado(v.id)}/>
           ))}
         </div>
+
+        <p className="text-xl text-center">Orçamento para o veículo: <span className="text-cor5">Toyota Corolla 2018 (XYZ-5421)</span> feito!</p>
+        <p className="text-2xl text-center mb-20">Valor: R$ XXX,XX</p>
     </main>
 </>
   )
