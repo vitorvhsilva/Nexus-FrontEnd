@@ -15,7 +15,8 @@ export default {
       'corFundoCinza': '#F6F6F6',
       'corBranco': '#FFF',
       'corPreto': '#000',
-      'corRoxo': '#8C64FF'
+      'corRoxo': '#8C64FF',
+      'corVermelho': '#FF1010'
     },
     extend: {
       fontFamily: {

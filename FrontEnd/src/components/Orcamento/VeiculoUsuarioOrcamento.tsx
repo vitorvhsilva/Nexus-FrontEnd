@@ -7,7 +7,7 @@ type VeiculoUsuarioOrcamento = {
   ano: number;
   placa: string;
   tipo: string;
-  diagnosticos: string[] | null;
+  diagnosticos: {diagnostico: string, feito: boolean}[];
   selecionado: boolean;
   aoClicar: () => void;
 }
@@ -15,7 +15,6 @@ type VeiculoUsuarioOrcamento = {
 export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo, diagnosticos, selecionado, aoClicar}:VeiculoUsuarioOrcamento) {
 
   const [img, setImg] = useState("")
-  const [mostrarDiagnosticos, setMostrarDiagnosticos] = useState([])
 
   useEffect(() => {
     if (tipo == "C") {
@@ -42,9 +41,12 @@ export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo
       </div>
       {selecionado &&       
         <div className="w-[80%] h-fit py-5 border-2 border-t-0 border-corPreto rounded-b-xl mx-auto flex gap-2 items-center flex-col z-0">
-          <RadioFormOrcamento id="oi" label="oi" value="oi"/>
-          <RadioFormOrcamento id="oi" label="oi" value="oi"/>
-          <button className="w-[80%] h-10 text-xl text-corBranco bg-cor5 rounded-lg">Gerar orçamento</button>
+          {diagnosticos.map((d) => (
+            <RadioFormOrcamento id={d.diagnostico} label={d.diagnostico} value={d.diagnostico} feito={d.feito}/>
+          ))}
+          {diagnosticos.length > 0 &&
+            <button className="w-[80%] h-10 text-xl text-corBranco bg-cor5 rounded-lg">Gerar orçamento</button>
+          }
         </div>
       }
     </div>
