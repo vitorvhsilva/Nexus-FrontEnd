@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Funcionalidade from "./Funcionalidade";
 import VeiculoUsuario from "./VeiculoUsuario";
 
@@ -24,8 +25,12 @@ export default function PaginaUsuarioComponent() {
           <VeiculoUsuario key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo}/>
         ))}
       </div>
-      <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar veículo</button>
-      <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar endereço</button>
+      <Link href={"user/adicionar/veiculo"}>
+        <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar veículo</button>
+      </Link>
+      <Link href={"user/adicionar/endereco"}>
+        <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar endereço</button>
+      </Link>
       <button className="block mx-auto my-20 text-2xl bg-corVermelho text-corBranco rounded-md px-20 py-3">Deslogar</button>
     </main>
   )
