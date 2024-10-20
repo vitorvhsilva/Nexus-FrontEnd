@@ -14,3 +14,8 @@ export type TipoUsuario = {
   telefone: string,
   cpf: string
 }
+
+export type TipoLogin = {
+  email: string, 
+  senha: string
+}
