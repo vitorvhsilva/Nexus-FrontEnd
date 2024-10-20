@@ -5,3 +5,12 @@ export type tiposIntegrantes = {
   salaIntegrante:string, 
   githubIntegrante:string
 }
+
+export type TipoUsuario = {
+  nome: string,
+  email: string,
+  senha: string,
+  genero: string,
+  telefone: string,
+  cpf: string
+}
