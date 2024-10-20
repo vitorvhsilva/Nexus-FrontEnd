@@ -5,6 +5,7 @@ import Cabecalho from "../Cabecalho/Cabecalho";
 import Rodape from "../Rodape/Rodape";
 import EnderecoUsuario from "./EnderecoUsuario";
 import { TipoEnderecoUsuario } from "@/app/types";
+import Mecanica from "./Mecanica";
 
 export default function AgendamentoComponent(){
 
@@ -15,14 +16,30 @@ export default function AgendamentoComponent(){
         num: ""
     })
 
+    const [mecanica, setMecanica] = useState<{nome: string}>({
+        nome: "",
+    })
+
     const listaEndereco: TipoEnderecoUsuario[] = [
         {cep: "08345211", bairro: "Centro", rua: "Rua VAA", num: "23"},
         {cep: "08345321", bairro: "ABC", rua: "Rua ADS", num: "12"}
     ]
 
+    const listaMecanica: {nome: string}[] = [
+        {nome: "Mecânica do Jorjão"},
+        {nome: "Mecânica do A"},
+        {nome: "Mecânica do B"},
+        {nome: "Mecânica do C"},
+    ]
+    
     const handleEnderecoClick = (enderecoSelecionado: TipoEnderecoUsuario) => {
         setEndereco(enderecoSelecionado);
         console.log(enderecoSelecionado)
+    };
+
+    const handleMecanicaClick = (mecanicaSelecionada: {nome: string}) => {
+        setMecanica(mecanicaSelecionada);
+        console.log(mecanicaSelecionada)
     };
 
     return(
@@ -36,19 +53,12 @@ export default function AgendamentoComponent(){
                         <EnderecoUsuario key={i} bairro={e.bairro} cep={e.cep} num={e.num} rua={e.rua} aoClicar={() => handleEnderecoClick(e)} selecionado={endereco.cep === e.cep}/>
                     ))}
                 </div>
-                <form>
-                    <div className="my-20">
-                        <label className="text-xl mx-20">Data e hora</label>
-                        <input type="datetime-local" className="block border mx-20 rounded mb-5"/>
-                        <label className="text-xl mx-20 block">Escolha uma dessas mecânicas do seu bairro</label>
-                        <select name="mecanicas" id="mecanicas" className="border rounded mx-20">
-                            <option value="Jorge automóveis">Jorge automóveis</option>
-                            <option value="Mecanica do vitão">Mecanica do vitão</option>
-                            <option value="Automotiva da quebrada">Automotiva da quebrada</option>
-                        </select>
-                    </div>
-                    <input type="submit" value="Fazer agendamento" className="text-xl bg-cor5 py-3 px-10 text-corBranco rounded-lg mx-auto block my-10" />
-                </form>
+                <h2 className="text-xl text-center my-5">Selecione a <span className="text-cor5">mecânica</span> do seu bairro</h2>
+                <div className="w-[90%] lg:w-[70%] h-fit grid md:grid-cols-4 grid-cols-2 gap-12 mx-auto border-corPreto border-2 rounded-xl mb-10 p-5"> 
+                    {listaMecanica.map((m, i) => (
+                        <Mecanica key={i} nome={m.nome} aoClicar={() => handleMecanicaClick(m)} selecionado={mecanica.nome === m.nome}/>
+                    ))}
+                </div>
             </section>
             <Rodape/>
         </>

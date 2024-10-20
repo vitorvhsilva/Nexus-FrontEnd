@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import VeiculoUsuarioOrcamento from "./VeiculoUsuarioOrcamento"
+import { TipoVeiculoUsuarioOrcamento } from "@/app/types"
 
 export default function OrcamentoComponent() {
 
@@ -14,14 +15,28 @@ export default function OrcamentoComponent() {
     {id: 3, marca: "Volvo", modelo: "FH 540", ano: 2015, placa: "JKL-3212", tipo: "T", diagnosticos: []},
   ]
 
-  const [veiculoSelecionado, setVeiculoSelecionado] = useState(null)
+  const [veiculoSelecionado, setVeiculoSelecionado] = useState({
+    marca: "",
+    modelo: "",
+    ano: 0,
+    placa: "",
+    tipo: "",
+    diagnosticos: [
+      {diagnostico: "", feito: false}
+    ]
+  })
+
+  const handleVeiculoClick = (veiculoSelecionado: TipoVeiculoUsuarioOrcamento) => {
+    setVeiculoSelecionado(veiculoSelecionado);
+    console.log(veiculoSelecionado)
+  };
 
   return (
     <>
     <main className="font-poppins">
         <div className="w-[95%] h-fit grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12 mx-auto rounded-xl my-10 p-5"> 
           {veiculosUsuarios.map((v) => (
-            <VeiculoUsuarioOrcamento key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} diagnosticos={v.diagnosticos} selecionado={v.id === veiculoSelecionado} aoClicar={() => setVeiculoSelecionado(v.id)}/>
+            <VeiculoUsuarioOrcamento key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} diagnosticos={v.diagnosticos} selecionado={v.placa === veiculoSelecionado.placa} aoClicar={() => handleVeiculoClick(v)}/>
           ))}
         </div>
 

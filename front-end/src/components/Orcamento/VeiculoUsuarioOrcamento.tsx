@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react";
 import RadioFormOrcamento from "./RadioFormOrcamento";
 import Image from "next/image";
+import { TipoVeiculoUsuarioOrcamento } from "@/app/types";
 
-type VeiculoUsuarioOrcamento = {
-  marca: string;
-  modelo: string;
-  ano: number;
-  placa: string;
-  tipo: string;
-  diagnosticos: {diagnostico: string, feito: boolean}[];
-  selecionado: boolean;
-  aoClicar: () => void;
-}
-
-export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo, diagnosticos, selecionado, aoClicar}:VeiculoUsuarioOrcamento) {
+export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo, diagnosticos, selecionado, aoClicar}: TipoVeiculoUsuarioOrcamento & {selecionado: boolean, aoClicar: () => void}) {
 
   const [img, setImg] = useState("")
 

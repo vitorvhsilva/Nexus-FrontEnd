@@ -26,3 +26,12 @@ export type TipoEnderecoUsuario = {
   rua:string,
   num:string
 }
+
+export type TipoVeiculoUsuarioOrcamento = {
+  marca: string;
+  modelo: string;
+  ano: number;
+  placa: string;
+  tipo: string;
+  diagnosticos: {diagnostico: string, feito: boolean}[]
+}
