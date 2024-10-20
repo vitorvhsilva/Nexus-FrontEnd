@@ -25,6 +25,8 @@ export default function PaginaUsuarioComponent() {
         ))}
       </div>
       <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar veículo</button>
+      <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar endereço</button>
+      <button className="block mx-auto my-20 text-2xl bg-corVermelho text-corBranco rounded-md px-20 py-3">Deslogar</button>
     </main>
   )
 }
