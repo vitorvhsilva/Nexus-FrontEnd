@@ -19,3 +19,10 @@ export type TipoLogin = {
   email: string, 
   senha: string
 }
+
+export type TipoEnderecoUsuario = {
+  cep:string,
+  bairro:string,
+  rua:string,
+  num:string
+}

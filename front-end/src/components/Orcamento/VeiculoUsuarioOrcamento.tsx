@@ -31,7 +31,7 @@ export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo
 
   return (
     <div className="w-fit h-fit">
-      <div className={`w-full h-full border-2 border-corPreto rounded-xl flex justify-center items-center lg:gap-20 gap-10 py-10 px-4 ${selecionado ? "scale-110 bg-cor2" : "hover:scale-110"} transition duration-500 z-10`} onClick={aoClicar}>
+      <div className={`w-full h-full border-2 border-corPreto rounded-xl flex justify-center items-center lg:gap-20 gap-10 py-10 ${selecionado ? "scale-110 bg-cor2" : "hover:scale-110"} transition duration-500 z-10`} onClick={aoClicar}>
         <Image src={img} alt="Ícone de um carro" className="w-32 h-32" width={500} height={500}/>
         <div>
           <p className={`${selecionado ? "text-corBranco" : "text-corPreto"} text-3xl`}>{marca} <span className="text-cor5">{modelo}</span></p>
