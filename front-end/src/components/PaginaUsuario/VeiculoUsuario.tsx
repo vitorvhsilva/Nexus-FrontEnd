@@ -2,16 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { TipoVeiculoUsuario } from "@/app/types";
 
-type VeiculoUsuario = {
-  marca: string;
-  modelo: string;
-  ano: number;
-  placa: string;
-  tipo: string;
-}
-
-export default function VeiculoUsuario({marca, modelo, ano, placa, tipo}:VeiculoUsuario) {
+export default function VeiculoUsuario({id, marca, modelo, ano, placa, tipo}:TipoVeiculoUsuario) {
 
   const [img, setImg] = useState("")
 

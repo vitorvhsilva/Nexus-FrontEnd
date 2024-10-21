@@ -27,6 +27,15 @@ export type TipoEnderecoUsuario = {
   num:string
 }
 
+export type TipoVeiculoUsuario = {
+  id: number, 
+  marca: string, 
+  modelo: string, 
+  ano: number, 
+  placa: number, 
+  tipo: string
+}
+
 export type TipoVeiculoUsuarioOrcamento = {
   marca: string;
   modelo: string;

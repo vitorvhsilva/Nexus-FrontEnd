@@ -1,14 +1,41 @@
+"use client"
+
 import Link from "next/link";
 import Funcionalidade from "./Funcionalidade";
 import VeiculoUsuario from "./VeiculoUsuario";
+import { useEffect, useState } from "react";
+import { TipoVeiculoUsuario } from "@/app/types";
 
 export default function PaginaUsuarioComponent() {
 
-  const veiculosUsuarios = [
-    {id: 1, marca: "Toyota", modelo: "Corolla", ano: 2018, placa: "XYZ-5421", tipo: "C"},
-    {id: 2, marca: "Honda", modelo: "CB 500", ano: 2020, placa: "ABC-3926", tipo: "M"},
-    {id: 3, marca: "Volvo", modelo: "FH 540", ano: 2015, placa: "JKL-3212", tipo: "T"},
-  ]
+  // const veiculosUsuarios = [
+  //   {id: 1, marca: "Toyota", modelo: "Corolla", ano: 2018, placa: "XYZ-5421", tipo: "C"},
+  //   {id: 2, marca: "Honda", modelo: "CB 500", ano: 2020, placa: "ABC-3926", tipo: "M"},
+  //   {id: 3, marca: "Volvo", modelo: "FH 540", ano: 2015, placa: "JKL-3212", tipo: "T"},
+  // ]
+
+  useEffect(() => {
+    pegarVeiculosDoUsuario()
+  }, [])
+
+  const [veiculos, setVeiculos] = useState<TipoVeiculoUsuario[]>([])
+
+  const pegarVeiculosDoUsuario = async () => {
+
+    const cpf = localStorage.getItem("cpf")
+    console.log(cpf)
+
+    const response = await fetch(`http://localhost:8080/veiculos/usuario/${cpf}`);
+    const veiculosData = await response.json()
+
+    if (veiculosData.length == 0) {
+      console.log("sem veiculos")
+      return  
+    }
+
+    setVeiculos(veiculosData)
+    console.log(veiculosData)
+  }
 
   return (
     <main className="w-full h-fit font-poppins">
@@ -21,8 +48,8 @@ export default function PaginaUsuarioComponent() {
       </div>
       <h2 className="text-center text-2xl my-10">Seus <span className="text-cor5">veículos</span></h2>
       <div className="w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 gap-12 mx-auto border-corPreto border-2 rounded-xl my-10 p-5"> 
-        {veiculosUsuarios.map((v) => (
-          <VeiculoUsuario key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo}/>
+        {veiculos && veiculos.map((v) => (
+          <VeiculoUsuario key={v.id} id={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo}/>
         ))}
       </div>
       <Link href={"user/adicionar/veiculo"}>

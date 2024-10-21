@@ -44,6 +44,7 @@ export default function CadastroComponent() {
           telefone: "",
           cpf: ""
         });
+        localStorage.setItem("cpf", usuario.cpf)
         navigate.push("/user");
       }
 
