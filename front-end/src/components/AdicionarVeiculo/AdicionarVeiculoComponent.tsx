@@ -37,12 +37,16 @@ export default function AdicionarVeiculoComponent(){
             body: JSON.stringify(veiculo)
           });
 
-          if(response.ok) {
-            alert("Veiculo cadastrado")
-            navigate.push("/user")
+          if(!response.ok) {
+            const erroTexto = await response.text();
+            alert(erroTexto)
           }
 
+          alert("Veiculo cadastrado")
+          navigate.push("/user")
+
         } catch (error) {
+            alert(error)
             console.error(error)
         }
 
