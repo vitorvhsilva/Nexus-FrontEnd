@@ -1,15 +1,23 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Cabecalho() {
   const [aberto, setAberto] = useState(false);
+  const [logado, setLogado] = useState(false);
 
   const toggleMenu = () => {
     setAberto(!aberto);
   };
+
+  useEffect(() => {
+    const cpf = localStorage.getItem("cpf")
+    if (cpf) {
+      setLogado(true)
+    }
+  }, [])
 
   return (
     <header className="navbar font-poppins">
@@ -50,9 +58,15 @@ export default function Cabecalho() {
           </ul>
         </nav>
       </div>
-      <div className="navbar-login ms-auto">
-        <Link href="/login" className="login-button">Login</Link>
-      </div>
+      {logado ? 
+        <Link href="/user">
+          <Image src={"/imgs/icones/user.png"} height={100} width={100} className="w-10 h-10" alt="Icone de Usuario"/>
+        </Link>
+      :
+        <div className="navbar-login ms-auto">
+          <Link href="/login" className="login-button">Login</Link>
+        </div>
+      }
     </header>
   );
 }

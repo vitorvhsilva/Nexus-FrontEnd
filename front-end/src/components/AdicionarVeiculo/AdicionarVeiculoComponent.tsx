@@ -22,6 +22,12 @@ export default function AdicionarVeiculoComponent(){
         event.preventDefault()
     
         const cpf = localStorage.getItem("cpf")
+
+        if (!cpf) {
+            alert("Problema com a validação! Faça login novamente")
+            navigate.push("/login")
+        }
+
         const response = await fetch(`http://localhost:8080/usuarios/${cpf}`);
         const idUsuario = await response.json()
         setVeiculo({...veiculo, idUsuario: idUsuario})
