@@ -29,7 +29,6 @@ export default function PaginaUsuarioComponent() {
     const veiculosData = await response.json()
 
     if (veiculosData.length == 0) {
-      console.log("sem veiculos")
       return  
     }
 
@@ -49,8 +48,12 @@ export default function PaginaUsuarioComponent() {
       <h2 className="text-center text-2xl my-10">Seus <span className="text-cor5">veículos</span></h2>
       <div className="w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 gap-12 mx-auto border-corPreto border-2 rounded-xl my-10 p-5"> 
         {veiculos && veiculos.map((v) => (
-          <VeiculoUsuario key={v.id} id={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo}/>
+          <VeiculoUsuario key={v.id} id={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} /> 
         ))}
+        {veiculos.length < 1 && 
+          <h2 className="text-corVermelho text-xl">Nenhum veiculo cadastrado</h2>
+        }
+        
       </div>
       <Link href={"user/adicionar/veiculo"}>
         <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar veículo</button>
