@@ -36,11 +36,10 @@ export type TipoEnderecoUsuarioCadastro = {
 }
 
 export type TipoVeiculoUsuario = {
-  id: number, 
   marca: string, 
   modelo: string, 
   ano: number, 
-  placa: number, 
+  placa: string, 
   tipo: string
 }
 
@@ -60,4 +59,11 @@ export type TipoVeiculoUsuarioOrcamento = {
   placa: string;
   tipo: string;
   diagnosticos: {diagnostico: string, feito: boolean}[]
+}
+
+export type TipoDiagnostico = {
+  diagnosticoVeiculo: string;
+  dataDiagnostico: string;
+  idVeiculo: string;
+  idDescricaoProblema: string;
 }

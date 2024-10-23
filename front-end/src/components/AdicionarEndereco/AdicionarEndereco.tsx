@@ -42,6 +42,7 @@ export default function AdicionarEnderecoComponent(){
             if(!response.ok) {
               const erroTexto = await response.text();
               alert(erroTexto)
+              return
             }
   
             alert("Endereco cadastrado")

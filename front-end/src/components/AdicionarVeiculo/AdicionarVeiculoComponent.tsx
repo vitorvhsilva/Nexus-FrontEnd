@@ -46,6 +46,7 @@ export default function AdicionarVeiculoComponent(){
           if(!response.ok) {
             const erroTexto = await response.text();
             alert(erroTexto)
+            return
           }
 
           alert("Veiculo cadastrado")
