@@ -85,7 +85,7 @@ export default function AdicionarVeiculoComponent(){
                     <label htmlFor="ano" className="text-2xl">Ano</label>
                     <input type="number" id="ano" name="ano" placeholder="0" className="border-2 border-corPreto rounded-lg text-2xl w-28 p-2" onChange={(e) => setVeiculo({ ...veiculo, ano: Number(e.target.value) })}/>
                 </div>
-                <InputTextAdicionarVeiculo label="Placa" placeholder="Insira a placa do seu veículo" id="placa" veiculo={veiculo} setVeiculo={setVeiculo}/>
+                <InputTextAdicionarVeiculo label="Placa" placeholder="Insira a placa do seu veículo (AAAAAAA)" id="placa" veiculo={veiculo} setVeiculo={setVeiculo}/>
                 <input type="submit" value="Cadastrar veículo" className="text-3xl bg-cor5 py-3 px-10 text-corBranco rounded-lg mx-auto block my-10 cursor-pointer"/>
             </form>
         </section>

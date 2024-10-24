@@ -1,28 +1,46 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import VeiculoUsuarioOrcamento from "./VeiculoUsuarioOrcamento"
 import { TipoVeiculoUsuarioOrcamento } from "@/app/types"
+import { useRouter } from "next/navigation"
 
 export default function OrcamentoComponent() {
 
-  const veiculosUsuarios = [
-    {id: 1, marca: "Toyota", modelo: "Corolla", ano: 2018, placa: "XYZ-5421", tipo: "C", diagnosticos: [
-      {diagnostico: "Diagnóstico 19/08/2024 18:23", feito: false},
-      {diagnostico: "Diagnóstico 18/03/2024 09:16", feito: true},
-    ]},
-    {id: 2, marca: "Honda", modelo: "CB 500", ano: 2020, placa: "ABC-3926", tipo: "M", diagnosticos: []},
-    {id: 3, marca: "Volvo", modelo: "FH 540", ano: 2015, placa: "JKL-3212", tipo: "T", diagnosticos: []},
-  ]
+  const navigate = useRouter()
 
-  const [veiculoSelecionado, setVeiculoSelecionado] = useState({
+  useEffect(() => {
+    pegarVeiculosDoUsuario()
+  }, [])
+
+  const [veiculos, setVeiculos] = useState<TipoVeiculoUsuarioOrcamento[]>([])
+
+  const pegarVeiculosDoUsuario = async () => {
+
+    const cpf = localStorage.getItem("cpf")
+    console.log(cpf)
+
+    const response = await fetch(`http://localhost:8080/veiculos/diagnostico/${cpf}`);
+    const veiculosData = await response.json()
+
+    if (veiculosData.length == 0) {
+      alert('Nenhum veiculo cadastrado!')
+      navigate.push('/user/adicionar/veiculo')
+      return  
+    } 
+
+    setVeiculos(veiculosData)
+    console.log(veiculosData)
+  }
+
+  const [veiculoSelecionado, setVeiculoSelecionado] = useState<TipoVeiculoUsuarioOrcamento>({
     marca: "",
     modelo: "",
     ano: 0,
     placa: "",
     tipo: "",
     diagnosticos: [
-      {diagnostico: "", feito: false}
+      {diagnosticoVeiculo: "", dataDiagnostico: [], feitoDiagnostico: 0, idVeiculo: 0, idDescricaoProblema: 0}
     ]
   })
 
@@ -35,8 +53,8 @@ export default function OrcamentoComponent() {
     <>
     <main className="font-poppins">
         <div className="w-[95%] h-fit grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12 mx-auto rounded-xl my-10 p-5"> 
-          {veiculosUsuarios.map((v) => (
-            <VeiculoUsuarioOrcamento key={v.id} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} diagnosticos={v.diagnosticos} selecionado={v.placa === veiculoSelecionado.placa} aoClicar={() => handleVeiculoClick(v)}/>
+          {veiculos.map((v, i) => (
+            <VeiculoUsuarioOrcamento key={i} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} diagnosticos={v.diagnosticos} selecionado={v.placa === veiculoSelecionado.placa} aoClicar={() => handleVeiculoClick(v)}/>
           ))}
         </div>
 

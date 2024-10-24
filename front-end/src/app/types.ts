@@ -58,7 +58,7 @@ export type TipoVeiculoUsuarioOrcamento = {
   ano: number;
   placa: string;
   tipo: string;
-  diagnosticos: {diagnostico: string, feito: boolean}[]
+  diagnosticos: {diagnosticoVeiculo: string, dataDiagnostico: number[], feitoDiagnostico: number, idVeiculo: number, idDescricaoProblema: number}[]
 }
 
 export type TipoDiagnostico = {
