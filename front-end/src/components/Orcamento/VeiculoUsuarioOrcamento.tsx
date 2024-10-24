@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import RadioFormOrcamento from "./RadioFormOrcamento";
 import Image from "next/image";
-import { TipoVeiculoUsuarioOrcamento } from "@/app/types";
+import { TipoDiagnostico, TipoVeiculoUsuarioOrcamento } from "@/app/types";
 
-export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo, diagnosticos, selecionado, aoClicar}: TipoVeiculoUsuarioOrcamento & {selecionado: boolean, aoClicar: () => void}) {
+export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo, diagnosticos, selecionado, aoClicar, aoClicarDiag, handleSubmit}: TipoVeiculoUsuarioOrcamento & {selecionado: boolean, aoClicar: () => void, aoClicarDiag: (diagnostico: TipoDiagnostico) => void, handleSubmit: () => void}) {
 
   const [img, setImg] = useState("")
 
@@ -33,10 +33,10 @@ export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo
       {selecionado &&       
         <div className="w-[90%] h-fit py-5 border-2 border-t-0 border-corPreto rounded-b-xl mx-auto flex gap-2 items-center flex-col z-0">
           {diagnosticos.map((d, i) => (
-            <RadioFormOrcamento key={i} id={d.diagnosticoVeiculo} label={d.diagnosticoVeiculo} value={d.diagnosticoVeiculo} data={d.dataDiagnostico} feito={d.feitoDiagnostico == 1 ? true : false}/>
+            <RadioFormOrcamento key={i} id={d.diagnosticoVeiculo} value={d.diagnosticoVeiculo} data={d.dataDiagnostico} feito={d.feitoDiagnostico == 1} aoClicar={() => aoClicarDiag(d)}/>
           ))}
           {diagnosticos.length > 0 &&
-            <button className="w-[80%] h-10 text-xl text-corBranco bg-cor5 rounded-lg">Gerar orçamento</button>
+            <button onClick={handleSubmit} className="w-[80%] h-10 text-xl text-corBranco bg-cor5 rounded-lg">Gerar orçamento</button>
           }
         </div>
       }

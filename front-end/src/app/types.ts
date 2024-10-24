@@ -62,8 +62,9 @@ export type TipoVeiculoUsuarioOrcamento = {
 }
 
 export type TipoDiagnostico = {
-  diagnosticoVeiculo: string;
-  dataDiagnostico: string;
-  idVeiculo: string;
-  idDescricaoProblema: string;
+  diagnosticoVeiculo: string, 
+  dataDiagnostico: number[], 
+  feitoDiagnostico: number, 
+  idVeiculo: number, 
+  idDescricaoProblema: number
 }

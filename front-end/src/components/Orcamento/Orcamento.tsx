@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import VeiculoUsuarioOrcamento from "./VeiculoUsuarioOrcamento"
-import { TipoVeiculoUsuarioOrcamento } from "@/app/types"
+import { TipoDiagnostico, TipoVeiculoUsuarioOrcamento } from "@/app/types"
 import { useRouter } from "next/navigation"
 
 export default function OrcamentoComponent() {
@@ -44,17 +44,62 @@ export default function OrcamentoComponent() {
     ]
   })
 
+  const [diagnosticoSelecionado, setDiagnosticoSelecionado] = useState<TipoDiagnostico>({
+    diagnosticoVeiculo: "", dataDiagnostico: [], feitoDiagnostico: 0, idVeiculo: 0, idDescricaoProblema: 0
+  })
+
   const handleVeiculoClick = (veiculoSelecionado: TipoVeiculoUsuarioOrcamento) => {
     setVeiculoSelecionado(veiculoSelecionado);
     console.log(veiculoSelecionado)
   };
+
+  const handleDiagnosticoClick = (diagnosticoSelecionado: TipoDiagnostico) => {
+    setDiagnosticoSelecionado(diagnosticoSelecionado);
+    console.log(diagnosticoSelecionado)
+  };
+
+  const handleSubmit = async () => {
+
+    try {
+      const cpfUser = localStorage.getItem("cpf")
+      if (!cpfUser) {
+        alert('Problema com a validação! Faça login novamente')
+        navigate.push('/login')
+        return
+      }     
+
+      console.log(diagnosticoSelecionado)
+
+      const response = await fetch("http://localhost:8080/orcamentos", {
+        method:"POST",
+        headers:{
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(diagnosticoSelecionado)
+      });
+
+      if(!response.ok) {
+        const erroTexto = await response.text();
+        alert(erroTexto)
+        return
+      }
+
+      alert("Orçamento feito!")
+      navigate.push("/user")
+
+    } catch (error) {
+      alert(error)
+      console.error(error)
+    }
+  } 
+
 
   return (
     <>
     <main className="font-poppins">
         <div className="w-[95%] h-fit grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12 mx-auto rounded-xl my-10 p-5"> 
           {veiculos.map((v, i) => (
-            <VeiculoUsuarioOrcamento key={i} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} diagnosticos={v.diagnosticos} selecionado={v.placa === veiculoSelecionado.placa} aoClicar={() => handleVeiculoClick(v)}/>
+            <VeiculoUsuarioOrcamento key={i} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} diagnosticos={v.diagnosticos} selecionado={v.placa === veiculoSelecionado.placa} aoClicar={() => handleVeiculoClick(v)} aoClicarDiag={handleDiagnosticoClick} handleSubmit={handleSubmit}/>
           ))}
         </div>
 
