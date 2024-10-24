@@ -4,6 +4,7 @@ import { useState } from "react";
 import InputTextAdicionarVeiculo from "./InputTextAdicionarVeiculo";
 import { TipoVeiculoUsuarioCadastro } from "@/app/types";
 import { useRouter } from "next/navigation";
+import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 
 export default function AdicionarVeiculoComponent(){
 
@@ -60,6 +61,7 @@ export default function AdicionarVeiculoComponent(){
     }
     return(
         <section className="font-poppins">
+            <BotaoVoltar/>
             <h1 className="text-3xl text-center my-5">Insira os <span className="text-cor5">dados</span> do seu <span className="text-cor5">veículo</span></h1>
             <form action="" className="w-full h-fit md:px-40 px-5 mt-20" onSubmit={handleSubmit}>
                 <InputTextAdicionarVeiculo label="Marca" placeholder="Insira a marca do seu veículo" id="marca" veiculo={veiculo} setVeiculo={setVeiculo}/>

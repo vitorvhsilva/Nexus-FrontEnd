@@ -3,8 +3,12 @@
 import { TipoDiagnostico, TipoVeiculoUsuario } from "@/app/types"
 import { useEffect, useState } from "react"
 import VeiculoUsuarioDiagnostico from "./VeiculoUsuarioDiagnostico"
+import { useRouter } from "next/navigation"
 
 export default function DiagnosticoComponent(){
+
+    const navigate = useRouter()
+
     useEffect(() => {
         pegarVeiculosDoUsuario()
     }, [])
@@ -26,10 +30,12 @@ export default function DiagnosticoComponent(){
 
         const response = await fetch(`http://localhost:8080/veiculos/usuario/${cpf}`);
         const veiculosData = await response.json()
-
         if (veiculosData.length == 0) {
+            alert('Nenhum veiculo cadastrado!')
+            navigate.push('/user/adicionar/veiculo')
             return  
         }
+
 
         setVeiculos(veiculosData)
         console.log(veiculosData)

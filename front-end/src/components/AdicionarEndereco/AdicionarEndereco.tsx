@@ -4,6 +4,7 @@ import { useState } from "react"
 import InputTextAdicionarEndereco from "./InputTextAdicionarEndereco"
 import { TipoEnderecoUsuarioCadastro } from "@/app/types"
 import { useRouter } from "next/navigation"
+import BotaoVoltar from "../BotaoVoltar/BotaoVoltar"
 
 export default function AdicionarEnderecoComponent(){
 
@@ -55,7 +56,8 @@ export default function AdicionarEnderecoComponent(){
     }
 
     return(
-        <section className="font-poppins">
+        <section className="font-poppins h-full">
+            <BotaoVoltar/>
             <h1 className="text-3xl text-center my-5">Insira os <span className="text-cor5">dados</span> do seu <span className="text-cor5">endereço</span></h1>
             <form action="" className="w-full h-fit md:px-40 px-5 mt-20" onSubmit={handleSubmit}>
                 <InputTextAdicionarEndereco endereco={endereco} setEndereco={setEndereco} label="CEP" placeholder="Insira o CEP do seu endereço" id="cepEnderecoUsuario"/>
