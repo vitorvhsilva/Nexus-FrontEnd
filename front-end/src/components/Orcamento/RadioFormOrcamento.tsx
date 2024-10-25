@@ -5,7 +5,7 @@ export default function RadioFormOrcamento({id, value, feito, data, aoClicar}:{i
   return (
     <div className="flex justify-center items-center md:gap-2 gap-2" onClick={aoClicar}>
       <input type="radio" id={id} name="genero" value={value} className="w-6 h-6" disabled={feito}/>
-      <label htmlFor={id} className={`text-lg ${feito ? "text-corVermelho" : "hover:text-cor2"}`} >Diagnóstico {dataFormatada}</label>
+      <label htmlFor={id} className={`text-lg ${feito ? "text-corVermelho" : "hover:text-cor2"}`} >Diagnóstico {dataFormatada} {feito && "Já feito!"}</label>
     </div>
   )
 }

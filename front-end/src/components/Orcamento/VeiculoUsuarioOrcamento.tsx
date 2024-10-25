@@ -31,7 +31,7 @@ export default function VeiculoUsuarioOrcamento({marca, modelo, ano, placa, tipo
         </div>
       </div>
       {selecionado &&       
-        <div className="w-[90%] h-fit py-5 border-2 border-t-0 border-corPreto rounded-b-xl mx-auto flex gap-2 items-center flex-col z-0">
+        <div className="w-[100%] h-fit py-5 border-2 border-t-0 border-corPreto rounded-b-xl mx-auto flex gap-2 items-center flex-col z-0">
           {diagnosticos.map((d, i) => (
             <RadioFormOrcamento key={i} id={d.diagnosticoVeiculo} value={d.diagnosticoVeiculo} data={d.dataDiagnostico} feito={d.feitoDiagnostico == 1} aoClicar={() => aoClicarDiag(d)}/>
           ))}
