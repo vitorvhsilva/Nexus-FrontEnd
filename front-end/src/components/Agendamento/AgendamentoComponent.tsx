@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import Cabecalho from "../Cabecalho/Cabecalho";
 import Rodape from "../Rodape/Rodape";
 import EnderecoUsuario from "./EnderecoUsuario";
-import { TipoEnderecoUsuarioAgendamento, TipoHorarioMecanica } from "@/app/types";
+import { TipoEnderecoUsuarioAgendamento, TipoHorarioMecanica, TipoVeiculoUsuario } from "@/app/types";
 import Mecanica from "./Mecanica";
 import { useRouter } from "next/navigation";
 import HorarioMecanica from "./HorarioMecanica";
+import VeiculoUsuarioAgendamento from "./VeiculoUsuarioAgendamento";
 
 export default function AgendamentoComponent(){
 
@@ -137,42 +138,76 @@ export default function AgendamentoComponent(){
     const handleHorarioClick = (horarioSelecionado: TipoHorarioMecanica) => {
         setHorarioSelecionado(horarioSelecionado);
         console.log(horarioSelecionado)
+        pegarVeiculosDoUsuario()
     };
 
-    // const handleSubmit = async () => {
-    //     try {
-    //       const cpfUser = localStorage.getItem("cpf")
-    //       if (!cpfUser) {
-    //         alert('Problema com a validação! Faça login novamente')
-    //         navigate.push('/login')
-    //         return
-    //       }     
+    const [veiculos, setVeiculos] = useState<TipoVeiculoUsuario[]>([])
+    const [veiculoSelec, setVeiculoSelec] = useState<TipoVeiculoUsuario>({
+        marca: "", 
+        modelo: "", 
+        ano: 0, 
+        placa: "", 
+        tipo: ""
+    })
+
+    const pegarVeiculosDoUsuario = async () => {
+        const cpf = localStorage.getItem("cpf")
+        console.log(cpf)
+
+        const response = await fetch(`http://localhost:8080/veiculos/usuario/${cpf}`);
+        const veiculosData = await response.json()
+        if (veiculosData.length == 0) {
+            alert('Nenhum veiculo cadastrado!')
+            navigate.push('/user/adicionar/veiculo')
+            return  
+        }
+
+
+        setVeiculos(veiculosData)
+        console.log(veiculosData)
+    }
+
+    const handleVeiculoClick = (veiculoSelecionado: TipoVeiculoUsuario) => {
+        setVeiculoSelec(veiculoSelecionado);
+        console.log(veiculoSelecionado)
+    };
+
+    const submitAgendamento = async () => {
+        try {
+          const cpfUser = localStorage.getItem("cpf")
+          if (!cpfUser) {
+            alert('Problema com a validação! Faça login novamente')
+            navigate.push('/login')
+            return
+          }     
     
-    //       console.log(diagnosticoSelecionado)
+          console.log(enderecoSelecionado)
+          console.log(mecanicaSelecionada)
+          console.log(horarioSelecionado)
     
-    //       const response = await fetch("http://localhost:8080/orcamentos", {
-    //         method:"POST",
-    //         headers:{
-    //           "Content-Type" : "application/json"
-    //         },
-    //         body: JSON.stringify(diagnosticoSelecionado)
-    //       });
+        //   const response = await fetch("http://localhost:8080/orcamentos", {
+        //     method:"POST",
+        //     headers:{
+        //       "Content-Type" : "application/json"
+        //     },
+        //     body: JSON.stringify(diagnosticoSelecionado)
+        //   });
     
-    //       if(!response.ok) {
-    //         const erroTexto = await response.text();
-    //         alert(erroTexto)
-    //         return
-    //       }
+        //   if(!response.ok) {
+        //     const erroTexto = await response.text();
+        //     alert(erroTexto)
+        //     return
+        //   }
     
-    //       const orcamento = await response.json();
-    //       console.log(orcamento)
-    //       setValorOrcamento(orcamento.valorOrcamento)
+        //   const orcamento = await response.json();
+        //   console.log(orcamento)
+        //   setValorOrcamento(orcamento.valorOrcamento)
     
-    //     } catch (error) {
-    //       alert(error)
-    //       console.error(error)
-    //     }
-    // } 
+        } catch (error) {
+          alert(error)
+          console.error(error)
+        }
+    } 
 
     return(
         <>
@@ -204,6 +239,19 @@ export default function AgendamentoComponent(){
                             ))}
                         </div>
                     </>
+                }
+                {horarioSelecionado.idMecanica != 0 && 
+                    <>
+                        <h2 className="text-xl text-center my-5">Selecione um <span className="text-cor5">veículo</span></h2>
+                        <div className="w-[90%] lg:w-[70%] h-fit grid md:grid-cols-2 grid-cols-1 gap-12 mx-auto border-corPreto border-2 rounded-xl mb-10 p-5"> 
+                            {veiculos && veiculos.map((v, i) => (
+                                <VeiculoUsuarioAgendamento key={i} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} aoClicar={() => handleVeiculoClick(v)} selecionado={veiculoSelec.placa == v.placa}/>
+                            ))}
+                        </div>
+                    </>
+                }
+                {horarioSelecionado.idMecanica != 0 && 
+                    <button className="text-xl bg-cor2 text-corBranco px-10 py-4 rounded-3xl my-5 cursor-pointer" onClick={submitAgendamento}>Fazer agendamento</button>
                 }
             </section>
             <Rodape/>
