@@ -7,6 +7,7 @@ import EnderecoUsuario from "./EnderecoUsuario";
 import { TipoEnderecoUsuarioAgendamento } from "@/app/types";
 import Mecanica from "./Mecanica";
 import { useRouter } from "next/navigation";
+import HorarioMecanica from "./HorarioMecanica";
 
 export default function AgendamentoComponent(){
 
@@ -42,6 +43,12 @@ export default function AgendamentoComponent(){
         setEnderecos(enderecosData)
         console.log(enderecosData)
     }
+
+    const handleEnderecoClick = (enderecoSelecionado: TipoEnderecoUsuarioAgendamento) => {
+        setEnderecoSelecionado(enderecoSelecionado);
+        console.log(enderecoSelecionado)
+        pegarMecanicasDoBairro(enderecoSelecionado.bairroEnderecoUsuario)
+    };
 
     const [mecanicas, setMecanicas] = useState<{nomeMecanica: string}[]>([])
     const [mecanicaSelecionada, setMecanicaSelecionada] = useState<{nomeMecanica: string}>({
@@ -81,16 +88,27 @@ export default function AgendamentoComponent(){
         }
     } 
 
-    
-    const handleEnderecoClick = (enderecoSelecionado: TipoEnderecoUsuarioAgendamento) => {
-        setEnderecoSelecionado(enderecoSelecionado);
-        console.log(enderecoSelecionado)
-        pegarMecanicasDoBairro(enderecoSelecionado.bairroEnderecoUsuario)
-    };
-
     const handleMecanicaClick = (mecanicaSelecionada: {nomeMecanica: string}) => {
         setMecanicaSelecionada(mecanicaSelecionada);
         console.log(mecanicaSelecionada)
+    };
+
+    const horarios = [
+        {horarioMecanica: "10:30"},
+        {horarioMecanica: "11:30"},
+        {horarioMecanica: "12:30"},
+        {horarioMecanica: "13:30"},
+        {horarioMecanica: "14:30"},
+        {horarioMecanica: "15:30"}
+    ]
+
+    const [horarioSelecionado, setHorarioSelecionado] = useState<{horarioMecanica: string}>({
+        horarioMecanica: ""
+    })
+
+    const handleHorarioClick = (horarioSelecionado: {horarioMecanica: string}) => {
+        setHorarioSelecionado(horarioSelecionado);
+        console.log(horarioSelecionado)
     };
 
     // const handleSubmit = async () => {
@@ -149,6 +167,12 @@ export default function AgendamentoComponent(){
                         </div>
                     </>
                 }
+                <h2 className="text-xl text-center my-5">Selecione um <span className="text-cor5">horário</span> dessa mecânica</h2>
+                <div className="w-[90%] lg:w-[70%] h-fit grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-12 mx-auto border-corPreto border-2 rounded-xl mb-10 p-5"> 
+                    {horarios && horarios.map((h, i) => (
+                        <HorarioMecanica key={i} horario={h.horarioMecanica} selecionado={horarioSelecionado.horarioMecanica == h.horarioMecanica} aoClicar={() => handleHorarioClick(h)}/>
+                    ))}
+                </div>
             </section>
             <Rodape/>
         </>

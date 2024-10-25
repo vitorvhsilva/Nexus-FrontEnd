@@ -75,3 +75,8 @@ export type TipoDiagnostico = {
   idVeiculo: number, 
   idDescricaoProblema: number
 }
+
+export type TipoHorarioMecanica = {
+  horarioDisponivel: number[];
+  idMecanica: number;
+}
