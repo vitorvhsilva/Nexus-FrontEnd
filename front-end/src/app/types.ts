@@ -80,3 +80,10 @@ export type TipoHorarioMecanica = {
   horarioDisponivel: number[];
   idMecanica: number;
 }
+
+export type TipoOrcamentoAgendamento = {
+  valorOrcamento:number;
+  dataOrcamento: number[];
+  idVeiculo: number;
+  idDiagnostico: number;
+}

@@ -7,7 +7,7 @@ export default function HorarioMecanica({horarioDisponivel, idMecanica, selecion
 
   return (
     <div onClick={aoClicar} className={`w-full h-full border-2 border-corPreto rounded-xl flex justify-center items-center py-10 px-4 gap-4 cursor-pointer flex-col transition duration-500 ${selecionado ? "scale-105 bg-cor1" : "hover:scale-105"}`}>
-      <Image src={"/imgs/icones/relogio.png"} alt="Ícone de um carro" className="w-20 h-20" width={500} height={500} />
+      <Image src={"/imgs/icones/relogio.png"} alt="Ícone de um relogio" className="w-20 h-20" width={500} height={500} />
       <div>
         <p className={`text-xl ${selecionado ? "text-corBranco" : "text-corPreto"}`}>{horarioFormatado}</p>
       </div>

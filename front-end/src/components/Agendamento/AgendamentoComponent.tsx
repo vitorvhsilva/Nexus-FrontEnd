@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import Cabecalho from "../Cabecalho/Cabecalho";
 import Rodape from "../Rodape/Rodape";
 import EnderecoUsuario from "./EnderecoUsuario";
-import { TipoEnderecoUsuarioAgendamento, TipoHorarioMecanica, TipoVeiculoUsuario } from "@/app/types";
+import { TipoEnderecoUsuarioAgendamento, TipoHorarioMecanica, TipoOrcamentoAgendamento, TipoVeiculoUsuario } from "@/app/types";
 import Mecanica from "./Mecanica";
 import { useRouter } from "next/navigation";
 import HorarioMecanica from "./HorarioMecanica";
 import VeiculoUsuarioAgendamento from "./VeiculoUsuarioAgendamento";
+import OrcamentoAgendamento from "./OrcamentoAgendamento";
 
 export default function AgendamentoComponent(){
 
@@ -170,6 +171,35 @@ export default function AgendamentoComponent(){
     const handleVeiculoClick = (veiculoSelecionado: TipoVeiculoUsuario) => {
         setVeiculoSelec(veiculoSelecionado);
         console.log(veiculoSelecionado)
+        pegarOrcamentosDoVeiculo(veiculoSelecionado.placa)
+    };
+
+    const [orcamentos, setOrcamentos] = useState<TipoOrcamentoAgendamento[]>([])
+    const [orcamentoSelecionado, setOrcamentoSelecionado] = useState<TipoOrcamentoAgendamento>({
+        valorOrcamento: 0,
+        dataOrcamento: [],
+        idVeiculo: 0,
+        idDiagnostico: 0
+    })
+
+    const pegarOrcamentosDoVeiculo = async (placa: string) => {
+    
+        const response = await fetch(`http://localhost:8080/orcamentos/veiculo/${placa}`);
+    
+        const orcamentosData = await response.json()
+        if (orcamentosData.length == 0) {
+            alert('Nenhum orcamento feito!')
+            navigate.push('/user')
+            return  
+        }
+    
+        setOrcamentos(orcamentosData);
+        console.log(orcamentosData);
+    }
+
+    const handleOrcamentoClick = (orcamentoSelecionado: TipoOrcamentoAgendamento) => {
+        setOrcamentoSelecionado(orcamentoSelecionado);
+        console.log(orcamentoSelecionado)
     };
 
     const submitAgendamento = async () => {
@@ -246,6 +276,16 @@ export default function AgendamentoComponent(){
                         <div className="w-[90%] lg:w-[70%] h-fit grid md:grid-cols-2 grid-cols-1 gap-12 mx-auto border-corPreto border-2 rounded-xl mb-10 p-5"> 
                             {veiculos && veiculos.map((v, i) => (
                                 <VeiculoUsuarioAgendamento key={i} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} aoClicar={() => handleVeiculoClick(v)} selecionado={veiculoSelec.placa == v.placa}/>
+                            ))}
+                        </div>
+                    </>
+                }
+                {veiculoSelec.placa != "" && 
+                    <>
+                        <h2 className="text-xl text-center my-5">Selecione um <span className="text-cor5">orçamento</span> desse veículo</h2>
+                        <div className="w-[90%] lg:w-[70%] h-fit grid md:grid-cols-4 grid-cols-2 gap-12 mx-auto border-corPreto border-2 rounded-xl mb-10 p-5"> 
+                            {orcamentos && orcamentos.map((o, i) => (
+                                <OrcamentoAgendamento key={i} dataOrcamento={o.dataOrcamento} aoClicar={() => handleOrcamentoClick(o)} idDiagnostico={o.idDiagnostico} idVeiculo={o.idVeiculo} valorOrcamento={o.valorOrcamento} selecionado={orcamentoSelecionado.dataOrcamento == o.dataOrcamento}/>
                             ))}
                         </div>
                     </>
