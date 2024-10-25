@@ -35,6 +35,13 @@ export type TipoEnderecoUsuarioCadastro = {
   numEnderecoUsuario:string
 }
 
+export type TipoEnderecoUsuarioAgendamento = {
+  cepEnderecoUsuario:string,
+  bairroEnderecoUsuario:string,
+  ruaEnderecoUsuario:string,
+  numEnderecoUsuario:string
+}
+
 export type TipoVeiculoUsuario = {
   marca: string, 
   modelo: string, 

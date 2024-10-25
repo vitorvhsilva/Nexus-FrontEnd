@@ -90,9 +90,6 @@ export default function OrcamentoComponent() {
       console.log(orcamento)
       setValorOrcamento(orcamento.valorOrcamento)
 
-      // alert(`Orçamento feito! Valor: ${valorOrcamento}`)
-      // navigate.push("/user")
-
     } catch (error) {
       alert(error)
       console.error(error)
