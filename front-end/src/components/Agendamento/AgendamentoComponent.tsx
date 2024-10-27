@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Cabecalho from "../Cabecalho/Cabecalho";
 import Rodape from "../Rodape/Rodape";
 import EnderecoUsuario from "./EnderecoUsuario";
-import { TipoEnderecoUsuarioAgendamento, TipoHorarioMecanica, TipoOrcamentoAgendamento, TipoVeiculoUsuario } from "@/app/types";
+import { TipoAgendamentoInput, TipoEnderecoUsuarioAgendamento, TipoHorarioMecanica, TipoOrcamentoAgendamento, TipoVeiculoUsuario } from "@/app/types";
 import Mecanica from "./Mecanica";
 import { useRouter } from "next/navigation";
 import HorarioMecanica from "./HorarioMecanica";
@@ -210,28 +210,33 @@ export default function AgendamentoComponent(){
             navigate.push('/login')
             return
           }     
+
+          const agendamentoInput: TipoAgendamentoInput = {
+            placaVeiculo: veiculoSelec.placa,
+            idMecanica: horarioSelecionado.idMecanica,
+            idDiagnostico: orcamentoSelecionado.idDiagnostico,
+            horarioDisponivel: horarioSelecionado.horarioDisponivel
+          }
     
-          console.log(enderecoSelecionado)
-          console.log(mecanicaSelecionada)
-          console.log(horarioSelecionado)
+          const response = await fetch("http://localhost:8080/agendamentos", {
+            method:"POST",
+            headers:{
+              "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(agendamentoInput)
+          });
     
-        //   const response = await fetch("http://localhost:8080/orcamentos", {
-        //     method:"POST",
-        //     headers:{
-        //       "Content-Type" : "application/json"
-        //     },
-        //     body: JSON.stringify(diagnosticoSelecionado)
-        //   });
-    
-        //   if(!response.ok) {
-        //     const erroTexto = await response.text();
-        //     alert(erroTexto)
-        //     return
-        //   }
-    
-        //   const orcamento = await response.json();
-        //   console.log(orcamento)
-        //   setValorOrcamento(orcamento.valorOrcamento)
+          if(!response.ok) {
+            const erroTexto = await response.text();
+            alert(erroTexto)
+            return
+          }
+          
+          alert("Agendamento feito com sucesso!")
+          const agendamento = await response.json();
+          console.log(agendamento)
+          navigate.push("/user")
+
     
         } catch (error) {
           alert(error)

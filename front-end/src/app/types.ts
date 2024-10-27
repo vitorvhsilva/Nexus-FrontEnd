@@ -87,3 +87,10 @@ export type TipoOrcamentoAgendamento = {
   idVeiculo: number;
   idDiagnostico: number;
 }
+
+export type TipoAgendamentoInput = {
+  placaVeiculo: string;
+  idMecanica: number;
+  idDiagnostico: number;
+  horarioDisponivel: number[];
+}
