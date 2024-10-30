@@ -1,7 +1,7 @@
 import { TipoOrcamentoAgendamento } from "@/app/types"
 import Image from "next/image"
 
-export default function OrcamentoAgendamento({ valorOrcamento, dataOrcamento, idVeiculo, idDiagnostico, selecionado, aoClicar}:TipoOrcamentoAgendamento & {selecionado: boolean ,aoClicar: () => void}) {
+export default function OrcamentoAgendamento({ valorOrcamento, dataOrcamento, selecionado, aoClicar}:TipoOrcamentoAgendamento & {selecionado: boolean ,aoClicar: () => void}) {
 
   const horaFormatada = `${dataOrcamento[3].toString().padStart(2, '0')}:${dataOrcamento[4].toString().padStart(2, '0')}:${dataOrcamento[5].toString().padStart(2, '0')}`;
 

@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function BannerPorto() {
   return (
     <section className="w-full h-fit py-10 flex justify-around items-center">
@@ -7,7 +9,7 @@ export default function BannerPorto() {
           <h3 className="text-corBranco text-xl">Faça o agendamento com um dos Centros Automotivos da <span className="text-cor5 font-semibold">Porto</span>, e o seu orçamento terá <span className="text-cor5 font-semibold">descontos</span></h3>
         </div>
         <div className="w-[80%] md:w-[30%] h-full flex justify-center items-center">
-          <img src="./imgs/logos/portoazul.png" alt="Logo da Porto" className="h-fit w-full"/>
+          <Image src="/imgs/logos/portoazul.png" alt="Logo da Porto" className="h-fit w-full" width={500} height={500}/>
         </div>
       </div>
     </section>

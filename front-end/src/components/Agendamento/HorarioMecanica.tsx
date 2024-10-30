@@ -1,7 +1,8 @@
 import { TipoHorarioMecanica } from "@/app/types"
 import Image from "next/image"
 
-export default function HorarioMecanica({horarioDisponivel, idMecanica, selecionado, aoClicar}:TipoHorarioMecanica & {selecionado: boolean ,aoClicar: () => void}) {
+export default function HorarioMecanica({horarioDisponivel, selecionado, aoClicar}:TipoHorarioMecanica & {selecionado: boolean ,aoClicar: () => void}) {
+
   const minutoFormatado = horarioDisponivel[4] == 0 ? "00" : horarioDisponivel[4]   
   const horarioFormatado = horarioDisponivel[3]+ ":" + minutoFormatado
 

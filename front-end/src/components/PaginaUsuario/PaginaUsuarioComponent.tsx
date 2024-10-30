@@ -48,7 +48,7 @@ export default function PaginaUsuarioComponent() {
       <h2 className="text-center text-2xl my-10">Seus <span className="text-cor5">veículos</span></h2>
       <div className="w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 gap-12 mx-auto border-corPreto border-2 rounded-xl my-10 p-5"> 
         {veiculos && veiculos.map((v, i) => (
-          <VeiculoUsuario key={i} id={i} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} /> 
+          <VeiculoUsuario key={i} marca={v.marca} modelo={v.modelo} ano={v.ano} placa={v.placa} tipo={v.tipo} /> 
         ))}
         {veiculos.length < 1 && 
           <h2 className="text-corVermelho text-xl">Nenhum veiculo cadastrado</h2>
