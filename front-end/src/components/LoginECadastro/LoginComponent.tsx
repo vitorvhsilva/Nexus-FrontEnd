@@ -38,7 +38,10 @@ export default function LoginComponent() {
         const dados = await response.json()
         localStorage.setItem("cpf", dados.cpf)
         navigate.push("/user");
+        return
       }
+
+      alert("Login não encontrado!")
     } catch (error) {
       alert(error)
       console.error("Falha ao fazer login!", error);

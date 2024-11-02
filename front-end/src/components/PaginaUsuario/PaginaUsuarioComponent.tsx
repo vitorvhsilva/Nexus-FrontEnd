@@ -5,6 +5,7 @@ import Funcionalidade from "./Funcionalidade";
 import VeiculoUsuario from "./VeiculoUsuario";
 import { useEffect, useState } from "react";
 import { TipoVeiculoUsuario } from "@/app/types";
+import { useRouter } from "next/navigation";
 
 export default function PaginaUsuarioComponent() {
 
@@ -14,7 +15,10 @@ export default function PaginaUsuarioComponent() {
   //   {id: 3, marca: "Volvo", modelo: "FH 540", ano: 2015, placa: "JKL-3212", tipo: "T"},
   // ]
 
+  const navigate = useRouter()
+
   useEffect(() => {
+    verificarLogin()
     pegarVeiculosDoUsuario()
   }, [])
 
@@ -34,6 +38,19 @@ export default function PaginaUsuarioComponent() {
 
     setVeiculos(veiculosData)
     console.log(veiculosData)
+  }
+
+  const verificarLogin = () => {
+    const cpf = localStorage.getItem("cpf")
+    if (!cpf) {
+      alert("Problemas com a autenticação!")
+      navigate.push("/")
+    }
+  }
+
+  const deslogarUsuario = () => {
+    localStorage.removeItem("cpf")
+    navigate.push("/")
   }
 
   return (
@@ -61,7 +78,7 @@ export default function PaginaUsuarioComponent() {
       <Link href={"user/adicionar/endereco"}>
         <button className="block mx-auto my-20 text-2xl bg-cor5 text-corBranco rounded-md px-20 py-3">Adicionar endereço</button>
       </Link>
-      <button className="block mx-auto my-20 text-2xl bg-corVermelho text-corBranco rounded-md px-20 py-3">Deslogar</button>
+      <button onClick={deslogarUsuario} className="block mx-auto my-20 text-2xl bg-corVermelho text-corBranco rounded-md px-20 py-3">Deslogar</button>
     </main>
   )
 }
