@@ -46,7 +46,11 @@ export default function CadastroComponent() {
         });
         localStorage.setItem("cpf", usuario.cpf)
         navigate.push("/user");
+        return
       }
+
+      const erroTexto = await response.text();
+      alert(erroTexto)
 
     } catch (error) {
       alert(error)

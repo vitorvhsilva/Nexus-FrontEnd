@@ -29,15 +29,13 @@ export default function AdicionarEnderecoComponent(){
                 return
             }     
             setEndereco({...endereco, cpfUsuario: cpfUser})
-
-            console.log(endereco)
   
             const response = await fetch("http://localhost:8080/enderecos/usuarios", {
               method:"POST",
               headers:{
                 "Content-Type" : "application/json"
               },
-              body: JSON.stringify(endereco)
+              body: JSON.stringify({...endereco, cpfUsuario: cpfUser})
             });
   
             if(!response.ok) {

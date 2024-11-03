@@ -41,7 +41,7 @@ export default function AdicionarVeiculoComponent(){
             headers:{
               "Content-Type" : "application/json"
             },
-            body: JSON.stringify(veiculo)
+            body: JSON.stringify({...veiculo, idUsuario: idUsuario})
           });
 
           if(!response.ok) {
